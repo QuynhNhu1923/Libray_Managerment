@@ -1,0 +1,14 @@
+en:
+  sessions:
+    not_found: "User not found"
+    create:
+      invalid_email_or_password: "invalid email or password"
+      success: "Login Successful"
+      not_activated: "Your account is not activated. Please check your email for the activation link."
+    destroy:
+      success: "Logout Successful"
+    new:
+      log_in: "Log in"
+      new_user?: "New user?"
+      sign_up_now!: "Sign up now!"
+      remember_me: "Remember me on this computer"

@@ -1,0 +1,10 @@
+vi:
+  user_mailer:
+    activation_subject: "Kích hoạt tài khoản"
+    greeting: "Chào"
+    welcome_message: "Chào mừng bạn đến với Sample App!"
+    activate_your_account: "Kích hoạt tài khoản của bạn"
+  account_activations:
+    edit:
+      success: "Tài khoản đã được kích hoạt!"
+      error: "Liên kết kích hoạt không hợp lệ"

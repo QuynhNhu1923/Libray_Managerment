@@ -1,0 +1,35 @@
+en:
+  users:
+    show:
+      not_found: "User not found"
+      title: "User Information"
+      created_at: "Created At"
+      updated_at: "Updated At"
+    new:
+      title: "Sign Up"
+      submit: "Submit"
+      create_account: "Create account"
+    create: 
+      success: "User was successfully created."
+      error: "Error!"
+    edit:
+      title: "Update your profile"
+      submit: "Submit"
+      not_found: "User not found"
+      change: "Change"
+    form:
+      confirmation: "Password Confirmation"
+    update:
+      success: "Update successfully"
+    index:
+      title: "All users"
+    destroy:
+      success: "Deleted user"
+      fail: "Delete fail"
+    user:
+      delete: "Delete"
+      are_you_sure?: "Are you sure to delete this user ?"
+    not_found: "User not found"
+    not_admin: "You are not authorized to perform this action."
+    check_email: "Please check your email for the activation link."
+    email_error: "There was an error sending the activation email. Please try again later."

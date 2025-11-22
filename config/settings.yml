@@ -1,0 +1,21 @@
+development:
+  app_name: "Sample_app"
+
+links:
+  rails_home: "http://www.railstutorial.org/"
+  rails_help: "http://www.railstutorial.org/help"
+  rails_book: "http://www.railstutorial.org/book"
+digits:
+  digit_6: 6
+pagy:
+  items: 10
+email:
+  from_address: "noreply@example.com"
+user_mailer:
+  host: localhost:3000
+  protocol: http
+
+mailer:
+  expire_hour: 2
+sizes:
+  size_80: 80

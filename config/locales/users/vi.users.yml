@@ -1,0 +1,39 @@
+vi:
+  users:
+    show:
+      not_found: "Không tìm thấy người dùng"
+      title: "Thông tin người dùng"
+      created_at: "Ngày tạo"
+      updated_at: "Cập nhật lúc"
+    new:
+      title: "Đăng ký tài khoản"
+      submit: "Xác nhận"
+      create_account: "Tạo tài khoản"
+    create: 
+      success: "Người dùng đã được tạo thành công."
+      error: "Lỗi!"
+    edit:
+      title: "Chỉnh sửa hồ sơ của bạn"
+      submit: "Xác nhận"
+      not_found: "Không tìm thấy người dùng"
+      change: "Thay đổi"
+    form:
+      confirmation: "Xác nhận mật khẩu"
+    update:
+      success: "Cập nhật thành công"
+    index:
+      title: "Tất cả người dùng"
+    destroy:
+      success: "Xóa người dùng thành công"
+      fail: "Xóa người dùng thất bại"
+    user:
+      delete: "Xóa"
+      are_you_sure?: "Bạn chắc chắn muốn xóa người dùng này ?"
+    not_found: "Không tìm thấy người dùng"
+    not_admin: "Bạn không được phép thực hiện hành động này."
+    please_login: "Vui lòng đăng nhập để truy cập trang này."
+    not_correct_user: "Bạn không được phép xem hồ sơ này."
+    check_email: "Vui lòng kiểm tra email của bạn để nhận liên kết kích hoạt."
+    email_error: "Đã xảy ra lỗi khi gửi email kích hoạt. Vui lòng thử lại sau."
+    check_email: "Vui lòng kiểm tra email của bạn để nhận liên kết kích hoạt."
+    email_error: "Đã xảy ra lỗi khi gửi email kích hoạt. Vui lòng thử lại sau."

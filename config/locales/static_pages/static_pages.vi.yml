@@ -1,0 +1,21 @@
+vi:
+  static_pages:
+    help:
+      title: "Trợ giúp"
+      heading: "Trợ giúp"
+      description_html: >
+        Nhận trợ giúp về Hướng dẫn Ruby on Rails tại
+        %{link1}.
+        Để nhận trợ giúp về ứng dụng mẫu này, hãy xem
+        %{link2}.
+      link1: "Trang trợ giúp Hướng dẫn Ruby on Rails"
+      link2: "Hướng dẫn Ruby on Rails"
+
+    home:
+      title: "Trang chủ"
+      heading: "Ứng dụng mẫu"
+      description_html: >
+        Đây là trang chủ của
+        %{link},
+        một ứng dụng mẫu.
+      link: "Hướng dẫn Ruby on Rails"

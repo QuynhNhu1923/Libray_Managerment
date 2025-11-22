@@ -1,0 +1,22 @@
+en:
+  static_pages:
+    help:
+      title: "Help"
+      heading: "Help"
+      description_html: >
+        Get help on the Ruby on Rails Tutorial at
+        %{link1}.
+        To get help on this sample app, see the
+        %{link2}
+        book.
+      link1: "Ruby on Rails Tutorial Help Page"
+      link2: "Ruby on Rails Tutorial"
+
+    home:
+      title: "Home"
+      heading: "Sample App"
+      description_html: >
+        This is the home page for the
+        %{link}
+        sample application.
+      link: "Ruby on Rails Tutorial"

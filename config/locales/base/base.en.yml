@@ -1,0 +1,29 @@
+en:
+  languages:
+    en: "English"
+    vi: "Vietnamese"
+
+  errors:
+    template:
+      header:
+        one: "1 error prevented %{model} from being saved"
+        other: "%{count} errors prevented %{model} from being saved"
+
+  layouts:
+    application:
+      base_title: "Ruby on Rails Tutorial Sample App"
+
+  navbar:
+    app_name: "Sample App"
+    home: "Home"
+    help: "Help"
+    sign_up: "Sign up"
+    log_in: "Log in"
+    account: "Account"
+    profile: "Profile"
+    settings: "Settings"
+    logout: "Logout"
+    users: "Users"
+  time:
+    formats:
+      default: "%d/%m/%Y %H:%M"

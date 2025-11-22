@@ -1,0 +1,12 @@
+// Import bootstrap
+@import 'bootstrap-sprockets';
+@import 'bootstrap';
+
+// Import partials
+@import 'layout';
+@import 'shared';
+@import 'sidebar';
+@import 'avatar';
+@import 'forms';
+@import 'dropdown-menu';
+@import 'checkbox';

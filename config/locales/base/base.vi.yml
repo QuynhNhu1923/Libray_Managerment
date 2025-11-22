@@ -1,0 +1,29 @@
+vi:
+  languages:
+    en: "Tiếng Anh"
+    vi: "Tiếng Việt"
+
+  errors:
+    template:
+      header:
+        one: "1 lỗi khiến %{model} không thể được lưu"
+        other: "%{count} lỗi khiến %{model} không thể được lưu"
+
+  layouts:
+    application:
+      base_title: "Ứng dụng mẫu Ruby on Rails Tutorial"
+
+  navbar:
+    app_name: "Ứng dụng mẫu"
+    home: "Trang chủ"
+    help: "Trợ giúp"
+    sign_up: "Đăng kí"
+    log_in: "Đăng nhập"
+    account: "Tài khoản"
+    profile: "Hồ sơ"
+    settings: "Cài đặt"
+    log_out: "Đăng xuất"
+    users: "Người dùng"
+  time:
+    formats:
+      default: "%d/%m/%Y %H:%M"

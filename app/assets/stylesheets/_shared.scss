@@ -1,0 +1,83 @@
+.center {
+  text-align: center;
+}
+
+.center h1 {
+  margin-bottom: 10px;
+}
+
+.notice {
+  color: green;
+}
+
+.notice-message {
+  color: #155724;
+  background-color: #d4edda;
+  border: 1px solid #c3e6cb;
+  padding: 10px 15px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.error-message {
+  color: #721c24;
+  background-color: #f8d7da;
+  border: 1px solid #f5c6cb;
+  padding: 15px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+
+  h2 {
+    margin-top: 0;
+    font-size: 1.2em;
+  }
+
+  ul {
+    margin: 0;
+    padding-left: 20px;
+
+    li {
+      margin-bottom: 5px;
+    }
+  }
+}
+
+
+// ===== Header / Logo =====
+#logo {
+  float: left;
+  padding-top: 9px;
+  margin-right: 10px;
+  font-size: 1.7em;
+  font-weight: bold;
+  letter-spacing: -1px;
+  text-transform: uppercase;
+  color: #fff;
+
+  &:hover {
+    color: #fff;
+    text-decoration: none;
+  }
+}
+
+// ===== Locale Switcher =====
+.locale-switcher {
+  margin: 0 0 0 0;
+  text-align: right;
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    li {
+      display: inline-block;
+
+      a {
+        font-weight: bold;
+        margin: 0 5px;
+      }
+    }
+  }
+}

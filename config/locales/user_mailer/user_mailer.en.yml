@@ -1,0 +1,10 @@
+en:
+  user_mailer:
+    activation_subject: "Activate account"
+    greeting: "Hi"
+    welcome_message: "Welcome to the Sample App!"
+    activate_your_account: "Activate your account"
+  account_activations:
+    edit:
+      success: "Account activated!"
+      error: "Invalid activation link"

@@ -1,0 +1,35 @@
+<header class="navbar navbar-fixed-top navbar-inverse">
+    <div class="container">
+        <%= link_to t("navbar.app_name"), "#", id: "logo" %>
+        <nav>
+            <ul class="nav navbar-nav navbar-right">
+              <li><%= link_to t("navbar.home"), root_path %></li>
+              <li><%= link_to t("navbar.help"), help_path %></li>
+              <% if logged_in? %>
+                <li class="dropdown">
+                  <%= link_to "#", id: "account", class: "dropdown-toggle", "data-toggle": "dropdown" do %>
+                    <%= t("navbar.account") %>
+                    <b class="caret"></b>
+                  <% end %>
+                  <ul class="dropdown-menu" id="dropdown-menu">
+                    <li><%= link_to t("navbar.profile"), current_user %></li>
+                    <li><%= link_to t("navbar.settings"), edit_user_path(current_user) %></li>
+                    <li class="divider"></li>
+                    <li> <%= link_to t("navbar.log_out"), logout_path, data: {"turbo-method": :delete} %></li>
+                  </ul>
+                </li>
+              <% else %>
+                <li><%= link_to t("navbar.log_in"), login_path %></li>
+                <li><%= link_to t("navbar.sign_up"), signup_path %></li>
+              <% end %>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<div class="locale-switcher">
+  <ul class="nav navbar-nav navbar-right">
+    <li><%= link_to t("languages.en") , request.params.merge(locale: :en) %></li>
+    <li><%= link_to t("languages.vi"), request.params.merge(locale: :vi) %></li>
+  </ul>
+</div>
