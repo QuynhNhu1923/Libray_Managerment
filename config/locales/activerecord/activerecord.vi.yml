@@ -1,0 +1,115 @@
+vi:
+  activerecord:
+    models:
+      user: "Người dùng"
+      product: "Sản phẩm"
+
+    attributes:
+      product:
+        name: "Tên sản phẩm"
+      user:
+        name: "Họ và tên"
+        email: "Email"
+        phone_number: "Số Điện Thoại"
+        address: "Địa Chỉ"
+        password: "Mật khẩu"
+        password_confirmation: "Xác nhận mật khẩu"
+        date_of_birth: "Ngày sinh"
+        gender: "Giới tính"
+        gender_options:
+          male: "Nam"
+          female: "Nữ"
+          other: "Khác"
+
+    errors:
+      models:
+        user:
+          attributes:
+            name:
+              blank: "không được để trống"
+              too_short: "quá ngắn (tối thiểu %{count} ký tự)"
+            email:
+              blank: "không được để trống"
+              invalid: "không hợp lệ"
+              taken: "đã được sử dụng"
+            gender:
+              blank: "không được để trống"
+            password:
+              blank: "không được để trống"
+              too_short: "quá ngắn (tối thiểu %{count} ký tự)"
+              password_blank: "không được để trống nếu đã cung cấp xác nhận mật khẩu"
+            password_confirmation:
+              blank: "không được để trống"
+              confirmation: "không khớp với mật khẩu"
+            date_of_birth:
+              blank: "không được để trống"
+              invalid: "không phải là ngày hợp lệ"
+              in_future: "không được ở tương lai"
+              past_max_year: "không được cách hiện tại quá 100 năm"
+        book:
+          attributes:
+            title:
+              blank: "Tiêu đề không được để trống"
+              too_long: "Tiêu đề không được dài quá %{count} ký tự"
+            description:
+              too_long: "Mô tả không được dài quá %{count} ký tự"
+            publication_year:
+              invalid: "Năm xuất bản phải là số nguyên lớn hơn %{year}"
+            total_quantity:
+              blank: "Tổng số lượng không được để trống"
+              invalid: "Tổng số lượng phải là số nguyên lớn hơn 0"
+            available_quantity:
+              blank: "Số lượng có sẵn không được để trống"
+              invalid: "Số lượng có sẵn phải từ 0 đến tổng số lượng"
+            borrow_count:
+              blank: "Số lần mượn không được để trống"
+              invalid: "Số lần mượn phải là số nguyên không âm"
+            author_id:
+              blank: "Vui lòng chọn tác giả"
+            publisher_id:
+              blank: "Vui lòng chọn nhà xuất bản"
+        author:
+          attributes:
+            death_date:
+              after_birth: "Ngày mất phải sau ngày sinh"
+              in_future: "Ngày mất không được ở tương lai"
+            base:
+              restrict_dependent_destroy:
+                has_many: "Không thể xóa tác giả này vì vẫn còn sách liên kết."
+        publisher:
+          attributes:
+            base:
+              restrict_dependent_destroy:
+                has_many: "Không thể xóa nhà xuất bản này vì vẫn còn sách liên kết."
+        category:
+          attributes:
+            base:
+              restrict_dependent_destroy:
+                has_many: "Không thể xóa thể loại này vì vẫn còn sách liên kết."
+        borrow_request:
+          attributes:
+            end_date:
+              after_start_date: "phải sau ngày bắt đầu"
+            admin_note:
+              blank_if_rejected: "không được để trống khi trạng thái bị từ chối"
+            actual_return_date:
+              blank_if_returned: "không được để trống khi trạng thái đã trả"
+              cannot_be_future: "không được sau ngày hiện tại"
+              after_borrowed_date: "phải sau ngày mượn thực tế"
+              before_end_date: "phải trước ngày kết thúc"
+            phone_number:
+              invalid_phone_number: "phải là số điện thoại hợp lệ (10-15 chữ số, có thể có + cho mã quốc gia)"
+              blank: "không được để trống"
+            address:
+              too_long: "quá dài (tối đa 500 ký tự)"
+              blank: "không được để trống"
+            approved_date:
+              before_start_date: "phải trước ngày bắt đầu"
+              after_request_date: "phải sau ngày yêu cầu"
+            actual_borrow_date:
+              after_approved_date: "phải sau ngày phê duyệt"
+              before_end_date: "phải trước ngày kết thúc"
+              after_start_date: "phải sau ngày bắt đầu"
+            quantity:
+              blank: "không được để trống"
+              not_enough_stock: "không đủ trong kho"

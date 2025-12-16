@@ -1,0 +1,31 @@
+<%= form_with(model: [book, review],
+              url: write_a_review_book_path(book),
+              method: :post,
+              data: { turbo_frame: "review_section" },
+              id: "reviewFormInner") do |f| %>
+
+  <div id="starRating" class="star-rating mb-3">
+    <% 5.times do |i| %>
+      <% star_value = i + 1 %>
+      <span class="star <%= 'selected' if review&.score.to_i >= star_value %>"
+            data-value="<%= star_value %>">&#9733;</span>
+    <% end %>
+  </div>
+
+  <%= f.hidden_field :score, value: review&.score %>
+
+  <div class="mb-3">
+    <%= f.label :comment, t(".your_review") %>
+    <%= f.text_area :comment, value: review&.comment, rows: 3, class: "form-control" %>
+  </div>
+
+  <div class="d-flex gap-2">
+    <%= f.submit review&.persisted? ? t(".update_review") : t(".submit_review"),
+                class: "btn btn-success",
+                data: { turbo_disable_with: false } %>
+
+    <button type="button" class="btn btn-secondary" id="cancelReviewBtn">
+      <%= t(".cancel") %>
+    </button>
+  </div>
+<% end %>

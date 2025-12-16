@@ -1,0 +1,11 @@
+<%= turbo_stream.replace "review_section" do %>
+  <%= render "books/review_section", book: @book, review: @review %>
+<% end %>
+<%= turbo_stream.replace "review_section" do %>
+  <%= render "books/review_section", book: @book, review: @user_review %>
+<% end %>
+
+<%= turbo_stream.replace "community_rating" do %>
+  <%= render "books/community_rating", book: @book,
+             review_counts: @review_counts, total_reviews: @total_reviews %>
+<% end %>

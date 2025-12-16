@@ -1,0 +1,18 @@
+en:
+  admin:
+    reports:
+      show:
+        no: "No."
+        title: "Book Title"
+        author: "Author"
+        borrow_count: "Borrow Count"
+        no_data: "No data found for this filter."
+        most_borrowed_books: "Most Borrowed Books"
+        borrowed_vs_returned: "Borrowed vs Returned (%)"
+        title: "Reports"
+        most_borrowed_books: "Most Borrowed Books"
+        all_months: "All months"
+        year: "Year"
+        filter: "Filter"
+        borrowed: "Borrowed"
+        returned: "Returned"

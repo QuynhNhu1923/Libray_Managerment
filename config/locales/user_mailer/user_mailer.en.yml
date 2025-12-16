@@ -1,0 +1,36 @@
+en:
+  user_mailer:
+    activation_subject: "Activate account"
+    greeting: "Hi"
+    welcome_message: "Welcome to the Sample App!"
+    activate_your_account: "Activate your account"
+    borrow_request_approved_subject: "Your book borrow request has been approved"
+    borrow_request_rejected_subject: "Your book borrow request has been rejected"
+
+    borrow_request_approved:
+      title: "Borrow Request Approved!"
+      greeting: "Dear %{name},"
+      message: "Great news! Your book borrow request has been approved by our library staff."
+      request_details: "Request Details:"
+      request_id: "Request ID"
+      start_date: "Borrow Start Date"
+      end_date: "Return Due Date"
+      books: "Books Approved:"
+      next_steps: "Please visit the library during the specified dates to collect your books."
+      footer: "Thank you for using our library management system."
+
+    borrow_request_rejected:
+      title: "Borrow Request Rejected"
+      greeting: "Dear %{name},"
+      message: "We regret to inform you that your book borrow request has been rejected."
+      request_details: "Request Details:"
+      request_id: "Request ID"
+      request_date: "Request Date"
+      books: "Books Requested:"
+      admin_note: "Reason for rejection"
+      next_steps: "You may submit a new request or contact the library for more information."
+      footer: "Thank you for your understanding."
+  account_activations:
+    edit:
+      success: "Account activated!"
+      error: "Invalid activation link"

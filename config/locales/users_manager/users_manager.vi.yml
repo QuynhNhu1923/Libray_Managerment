@@ -1,0 +1,54 @@
+vi:
+  admin:
+    users:
+      index:
+        title: "Quản lý Người dùng"
+        id: "Số thứ tự"
+        name: "Tên"
+        email: "Email"
+        username: "Tên đăng nhập"
+        action: "Hành động"
+        view: "Xem"
+        status: "Trạng thái"
+        no_users: "Không tìm thấy người dùng"
+      search:
+        search_email: "Email"
+        search_email_placeholder: "Nhập email"
+        search_name: "Tên"
+        search_name_placeholder: "Nhập tên người dùng"
+        status_eq: "Trạng thái"
+        all: "Tất cả"
+        search: "Tìm kiếm"
+      flash:
+        unauthorized_access: "Bạn không có quyền truy cập vào trang này."
+        not_found: "Không tìm thấy người dùng"
+        update_success: "Trạng thái người dùng đã được cập nhật thành công"  
+      show:
+        title: "Chi tiết người dùng"
+        back: "← Quay lại danh sách quản lý người dùng"
+      user_info:
+          title: "Thông tin người dùng"
+          ID: "ID"
+          name: "Tên"
+          phone: "Số điện thoại"
+          gender: "Giới tính"
+          age: "Tuổi"
+          address: "Địa chỉ"
+          email: "Email"
+          status: "Trạng thái"
+          created_at: "Ngày tạo"
+      toggle_status_form:
+          set_active: "Đặt thành hoạt động"
+          set_inactive: "Đặt thành không hoạt động"
+          confirm: "Bạn có chắc chắn muốn thay đổi trạng thái của người dùng này không?"
+      toggle_status:
+          update_success: "Trạng thái người dùng đã được cập nhật thành công"
+          update_fail: "Cập nhật trạng thái người dùng thất bại"
+      borrow_requests_table:
+          title: "Danh sách yêu cầu mượn"
+          no_requests: "Không tìm thấy yêu cầu mượn"
+          id: "ID yêu cầu"
+          request_date: "Ngày yêu cầu"
+          action: "Hành động"
+          status: "Trạng thái"
+          view: "Xem"

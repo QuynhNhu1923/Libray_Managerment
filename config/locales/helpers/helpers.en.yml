@@ -1,0 +1,6 @@
+en:
+  helpers:
+    label:
+      session:
+        email: "Email"
+        password: "Password"

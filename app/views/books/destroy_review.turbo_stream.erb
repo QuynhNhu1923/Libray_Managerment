@@ -1,0 +1,16 @@
+<% if @user_review&.destroyed? %>
+  <%= turbo_stream.replace "review_section" do %>
+    <%= render "books/review_section", book: @book, review: nil %>
+  <% end %>
+
+  <%= turbo_stream.replace "community_rating" do %>
+    <%= render "books/community_rating",
+               book: @book,
+               review_counts: @review_counts,
+               total_reviews: @total_reviews %>
+  <% end %>
+<% else %>
+  <%= turbo_stream.replace "flash" do %>
+    <%= render "shared/flash" %>
+  <% end %>
+<% end %>

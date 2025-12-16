@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= full_title(yield(:title)) %></title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+    <script src="<%= asset_path 'utils/i18n.js' %>"></script>
+    <script src="<%= asset_path 'custom/translations.js' %>"></script>
+  </head>
+
+  <body data-locale="<%= I18n.locale %>" data-logged-in="<%= user_signed_in? %>">
+    <%= render "layouts/header" %>
+
+    <div class="container mt-3">
+      <div id="flash">
+        <% flash.each do |message_type, message| %>
+        <% bs_class = case message_type.to_s
+           when "notice" then "info"
+           when "alert"  then "danger"
+           when "success" then "success"
+           else message_type
+           end %>
+          <div class="alert alert-<%= bs_class %>"><%= message %></div>
+        <% end %>
+      </div>
+
+      <div id="borrow-flash-container"></div>
+
+      <%= yield %>
+    </div>
+
+    <!-- Bootstrap JS Bundle (có Popper.js bên trong) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Modal -->
+    <%= render "shared/login_modal" %>
+    <%= javascript_include_tag "https://www.gstatic.com/charts/loader.js" %>
+    <%= javascript_include_tag "https://cdn.jsdelivr.net/npm/chartkick@5.0.1/dist/chartkick.js" %>
+    <%= javascript_include_tag "https://cdn.jsdelivr.net/npm/chart.js" %>
+  </body>
+</html>

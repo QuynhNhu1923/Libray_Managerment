@@ -1,0 +1,33 @@
+<%= form_with model: [:admin, publisher], local: true, class: "needs-validation" do |f| %>
+  <%= render "admin/shared/error_messages", object: publisher %>
+
+  <div class="mb-3">
+    <%= f.label :name, t("admin.publishers.attributes.name"), class: "form-label" %>
+    <%= f.text_field :name, class: "form-control", required: true %>
+  </div>
+
+  <div class="mb-3">
+    <%= f.label :address, t("admin.publishers.attributes.address"), class: "form-label" %>
+    <%= f.text_field :address, class: "form-control" %>
+  </div>
+
+  <div class="mb-3">
+    <%= f.label :phone_number, t("admin.publishers.attributes.phone_number"), class: "form-label" %>
+    <%= f.text_field :phone_number, class: "form-control" %>
+  </div>
+
+  <div class="mb-3">
+    <%= f.label :email, t("admin.publishers.attributes.email"), class: "form-label" %>
+    <%= f.text_field :email, class: "form-control" %>
+  </div>
+
+  <div class="mb-3">
+    <%= f.label :website, t("admin.publishers.attributes.website"), class: "form-label" %>
+    <%= f.text_field :website, class: "form-control" %>
+  </div>
+
+  <div class="d-flex gap-2">
+    <%= f.submit submit_text, class: "btn btn-success btn-sm w-auto" %>
+    <%= link_to t("admin.publishers.actions.cancel"), cancel_path, class: "btn btn-secondary" %>
+  </div>
+<% end %>

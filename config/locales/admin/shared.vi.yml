@@ -1,0 +1,4 @@
+vi:
+  shared:
+    form:
+      errors: "Có %{count} lỗi:"

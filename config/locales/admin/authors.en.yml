@@ -1,0 +1,43 @@
+en:
+  admin:
+    authors:
+      title: "Authors"
+      heading: "Manage Authors"
+
+      actions:
+        add: "Add Author"
+        search: "Search"
+        view: "View"
+        edit: "Edit"
+        delete: "Delete"
+        update: "Update"
+        new_title: "Add New Author"
+        save: "Save"
+
+      placeholders:
+        search: "Search by name"
+
+      attributes:
+        id: "No."
+        name: "Name"
+        created_at: "Created At"
+        action: "Action"
+        bio: "Biography"
+        nationality: "Nationality"
+        birth_date: "Birth Date"
+        death_date: "Death Date"
+
+      confirmations:
+        delete: "Are you sure you want to delete this author?"
+
+      flash:
+        not_found: "Author not found."
+        create:
+          success: "Author was successfully created."
+          failure: "Failed to create author."
+        update:
+          success: "Author was successfully updated."
+          failure: "Failed to update author."
+        destroy:
+          success: "Author was successfully deleted."
+          failure: "Failed to delete author."

@@ -1,0 +1,35 @@
+<div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
+  <h2 style="color: #dc3545;">❌ <%= t("user_mailer.borrow_request_rejected.title") %></h2>
+
+  <p><%= t("user_mailer.borrow_request_rejected.greeting", name: @user.name) %></p>
+
+  <p><%= t("user_mailer.borrow_request_rejected.message") %></p>
+
+  <div style="background-color: #f8f9fa; padding: 15px; border-radius: 5px; margin: 20px 0;">
+    <h4><%= t("user_mailer.borrow_request_rejected.request_details") %></h4>
+    <ul>
+      <li><strong><%= t("user_mailer.borrow_request_rejected.request_id") %>:</strong> #<%= @borrow_request.id %></li>
+      <li><strong><%= t("user_mailer.borrow_request_rejected.request_date") %>:</strong> <%= @borrow_request.request_date.strftime("%d/%m/%Y") %></li>
+    </ul>
+
+    <h5><%= t("user_mailer.borrow_request_rejected.books") %>:</h5>
+    <ul>
+      <% @books.each do |book| %>
+        <li><%= book.title %> - <%= book.author.name %></li>
+      <% end %>
+    </ul>
+
+    <% if @borrow_request.admin_note.present? %>
+      <div style="background-color: #fff3cd; padding: 10px; border-left: 4px solid #ffc107; margin-top: 15px;">
+        <strong><%= t("user_mailer.borrow_request_rejected.admin_note") %>:</strong><br>
+        <%= @borrow_request.admin_note %>
+      </div>
+    <% end %>
+  </div>
+
+  <p><%= t("user_mailer.borrow_request_rejected.next_steps") %></p>
+
+  <p style="color: #6c757d; font-size: 14px;">
+    <%= t("user_mailer.borrow_request_rejected.footer") %>
+  </p>
+</div>

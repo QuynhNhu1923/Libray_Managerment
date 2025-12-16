@@ -1,0 +1,140 @@
+<% provide :title, @book.title %>
+
+<div class="py-4 px-4">
+  <%= link_to "← #{t(".back_to_home")}", root_path, class: "btn btn-outline-secondary mb-4" %>
+
+  <div class="row book_detail">
+    <!-- Ảnh sách -->
+    <div class="col-md-4 text-center">
+      <% if @book.image.attached? %>
+        <%= image_tag url_for(@book.image), class: "img-fluid rounded book_detail-image"%>
+      <% else %>
+        <%= image_tag Setting.images.default_cover, class: "img-fluid rounded book_detail-image"%>
+      <% end %>
+
+      <!-- Nút hành động -->
+      <div class="mt-4">
+        <%= render partial: "favorite_button", locals: { item: @book } %>
+        <%= button_tag t(".borrow"), class: "borrow_button", type: "button" %>
+        <%= render "borrow_modal", book: @book %>
+      </div>
+    </div>
+
+    <!-- Thông tin sách -->
+    <div class="col-md-8">
+      <h2 class="fw-bold mb-3"><%= @book.title %></h2>
+      <p class="mb-3">
+        <strong><%= t(".rating") %>:</strong>
+        <%= @book.average_rating %> / <%= Settings.digits.digit_5%> ★
+      </p>
+      <p class="mb-3">
+        <strong><%= t(".read_count") %>:</strong>
+        <%= @book.borrow_count || 0 %>
+      </p>
+      <p class="mb-3">
+        <strong><%= t(".available_quantity") %>:</strong>
+        <%= @book.available_quantity %> |
+        <% if @book.available_quantity > 0 %>
+          <span class="badge bg-success"><%= t(".in_stock") %></span>
+        <% else %>
+          <span class="badge bg-danger"><%= t(".out_of_stock") %></span>
+        <% end %>
+      </p>
+
+      <hr>
+
+      <p><strong><%= t(".description") %>:</strong></p>
+      <p><%= @book.description.presence || t(".no_description") %></p>
+
+      <div class="mt-4 d-flex flex-wrap gap-3 me-5">
+        <!-- Publication year -->
+        <div class="border p-3 rounded flex-fill text-center">
+          <strong><%= t(".year") %>:</strong><br>
+          <div class="text-warning"><%= @book.publication_year %></div>
+        </div>
+
+        <!-- Category -->
+        <div class="border p-3 rounded flex-fill text-center">
+          <strong><%= t(".category") %>:</strong><br>
+          <div class="text-warning"><%= @book.categories.map(&:name).join(", ") %></div>
+        </div>
+
+        <!-- Publisher -->
+        <div class="border p-3 rounded flex-fill text-center">
+          <strong><%= t(".publisher") %>:</strong><br>
+          <div class="text-warning"><%= @book.publisher&.name %></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Author Info -->
+  <div class="author-info-wrapper mb-5 ps-5 pe-5">
+    <div class="author-border-line"></div>
+    <h4><strong><%= t(".about_author") %></strong></h4>
+    <div class="row align-items-center px-3 py-4 m-2">
+      <div class="col-md-2 text-center">
+        <% if @book.author&.image.attached? %>
+          <%= image_tag url_for(@book.author.image), class: "rounded-circle author-avatar" %>
+        <% else %>
+          <%= image_tag Settings.images.default_author, class: "rounded-circle author-avatar" %>
+        <% end %>
+      </div>
+      <div class="col-md-10">
+        <h4><strong><%= link_to @book.author.name, author_path(@book.author), class: "text-dark" %></strong></h4>
+        <div class="mb-2 text-muted">
+          <span><%= t(".no_of_books") %>: <%= @book.author.books.count %></span> |
+          <span><%= t(".no_of_followers") %>: 0</span>
+        </div>
+        <p><%= @book.author.bio.presence || t(".no_bio") %></p>
+      </div>
+    </div>
+    <div class="author-border-line"></div>
+  </div>
+
+  <!-- More books by same author -->
+  <% if @book.author && @recommended_books.present? %>
+    <div class="mt-5 ms-5 me-5">
+      <h4 class="mb-4"><strong><%= t(".more_books_by_author") %></strong></h4>
+      <div class="ms-5">
+        <%= turbo_frame_tag "recommended_books" do %>
+          <%= render partial: "recommended_books" %>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+
+  <!-- Rating and Reviews -->
+  <div class="row px-3">
+    <div class="col-md-6 text-center">
+      <h5 class="mb-3 text-primary"><%= t(".rating_and_reviews") %></h5>
+      <%= image_tag Settings.images.rating_and_reviews_avatar, class: "rounded-circle me-2 rating_and_reviews_avatar" %>
+      <strong><%= t(".what_do_you_think") %></strong><br>
+      <small><%= t(".rate_this_book") %></small>
+      <div class="mb-2">⭐⭐⭐⭐⭐</div>
+
+      <% if current_user %>
+        <%= turbo_frame_tag "review_section" do %>
+          <%= render "books/review_section", book: @book, review: @user_review %>
+        <% end %>
+      <% else %>
+        <%= button_tag t(".write_a_review"), type: "button", class: "btn btn-primary write_a_review_button" %>
+      <% end %>
+    </div>
+
+    <div class="col-md-6">
+      <h5 class="mb-3 text-primary"><%= t(".community_reviews") %></h5>
+      <%= render "books/community_rating",
+                book: @book, review_counts: @review_counts, total_reviews: @total_reviews %>
+    </div>
+  </div>
+
+  <!-- Comment -->
+  <div class="mt-5 px-3">
+    <h2 class="mb-3 text-primary"><strong><%= t(".readers_reviews") %></strong></h2>
+    <%= turbo_frame_tag "reviews" do %>
+      <%= render partial: "books/reviews",
+                locals: { pagy_reviews: @pagy_reviews, reviews: @reviews } %>
+    <% end %>
+  </div>
+</div>

@@ -1,0 +1,26 @@
+vi:
+  static_pages:
+    help:
+      title: "Trợ giúp"
+      heading: "Trợ giúp"
+      description_html: >
+        Nhận trợ giúp về Hướng dẫn Ruby on Rails tại
+        %{link1}.
+        Để nhận trợ giúp về ứng dụng mẫu này, hãy xem
+        %{link2}.
+      link1: "Trang trợ giúp Hướng dẫn Ruby on Rails"
+      link2: "Hướng dẫn Ruby on Rails"
+
+    home:
+      page_title: "Trang chủ"
+      greeting: "Chào buổi sáng,"
+      guest: "Khách"
+      start_with_book: "Bắt đầu ngày mới với một cuốn sách"
+      request_book: "Bạn cần một cuốn sách? 🔍"
+      title: "Tiêu đề"
+      category: "Thể loại"
+      author: "Tác giả"
+      publisher: "Nhà xuất bản"
+      search_placeholder: "Tìm kiếm..."
+      good_morning: "Chào buổi sáng"
+      recommended: "Gợi ý dành cho bạn"

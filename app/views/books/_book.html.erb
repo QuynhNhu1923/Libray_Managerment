@@ -1,0 +1,16 @@
+<%= link_to book_path(book), class: "text-decoration-none text-dark", data: { turbo: false } do %>
+  <div class="card rounded-4 mb-3 hoom-book">
+    <% if book.image.attached? %>
+      <%= image_tag url_for(book.image), class: "card-img-top rounded hoom-book-image", alt: book.title %>
+    <% else %>
+      <%= image_tag Settings.images.default_cover, class: "card-img-top rounded hoom-book-image", alt: book.title %>
+    <% end %>
+    <div class="card-body p-2 text-center">
+      <p class="fw-bold fs-6 mb-1"><%= truncate(book.title, length: Settings.digits.digit_20) %></p>
+      <small class="text-muted d-block mb-1"><%= book.author&.name %>, <%= book.publication_year %></small>
+      <small>
+        <%= book.average_rating %> / <%= Settings.digits.digit_5 %> ★
+      </small>
+    </div>
+  </div>
+<% end %>

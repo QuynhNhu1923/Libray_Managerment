@@ -1,0 +1,6 @@
+vi:
+  helpers:
+    label:
+      session:
+        email: "Email"
+        password: "Mật khẩu"

@@ -1,0 +1,4 @@
+<%= turbo_frame_tag "borrowed_by_#{borrow_request.id}" do %>
+  <input type="text" readonly class="form-control"
+        value="<%= borrow_request.borrowed_by_admin_name || t(".not_borrowed") %>">
+<% end %>

@@ -1,0 +1,26 @@
+en:
+  static_pages:
+    help:
+      title: "Help"
+      heading: "Help"
+      description_html: >
+        Get help on the Ruby on Rails Tutorial at
+        %{link1}.
+        To get help on this sample app, see the
+        %{link2}
+      link1: "Ruby on Rails Tutorial Help Page"
+      link2: "Ruby on Rails Tutorial"
+
+    home:
+      page_title: "Home"
+      greeting: "Good morning,"
+      guest: "Guest"
+      start_with_book: "Start your day with a book"
+      request_book: "Request for a BOOK? 🔍"
+      title: "Title"
+      category: "Category"
+      author: "Author"
+      publisher: "Publisher"
+      search_placeholder: "Search..."
+      good_morning: "Good Morning"
+      recommended: "Recommended for You"

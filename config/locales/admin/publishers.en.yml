@@ -1,0 +1,49 @@
+en:
+  admin:
+    publishers:
+      title: "Publishers"
+      heading: "Manage Publishers"
+      edit_title: "Edit Publisher"
+      new_title: "Add New Publisher"
+
+      flash:
+        not_found: "Publisher not found."
+        create:
+          success: "Publisher was successfully created."
+          failure: "Failed to create publisher."
+        update:
+          success: "Publisher was successfully updated."
+          failure: "Failed to update publisher."
+        destroy:
+          success: "Publisher was successfully deleted."
+          failure: "Failed to delete publisher."
+
+      actions:
+        view: "View"
+        edit: "Edit"
+        delete: "Delete"
+        search: "Search"
+        add: "Add Publisher"
+        back: "Back"
+        save: "Save"
+        cancel: "Cancel"
+        update: "Update"
+
+      confirmations:
+        delete: "Are you sure you want to delete this publisher?"
+
+      placeholders:
+        search: "Search by name"
+        no_address: "No address provided"
+        no_phone: "No phone number provided"
+        no_email: "No email provided"
+        no_website: "No website provided"
+
+      attributes:
+        id: "No."
+        name: "Name"
+        address: "Address"
+        phone_number: "Phone Number"
+        email: "Email"
+        website: "Website"
+        created_at: "Created At"

@@ -1,0 +1,49 @@
+<!-- Breadcrumb / Link -->
+<div class="mb-3">
+  <%= link_to t(".back_to_cart"), borrow_request_index_path, class: "btn btn-outline-primary" %>
+</div>
+
+<!-- Filter Form -->
+<%= form_with url: borrow_list_index_path, method: :get, local: true, class: "row g-3 mb-3" do %>
+  <div class="d-flex justify-content-center align-items-center gap-2 mt-3">
+    <div class="col-md-3">
+      <%= label_tag :status, t(".status"), class: "form-label" %>
+      <%= select_tag :status,
+        options_for_select(BorrowRequest.statuses.keys.map { |s| [s.humanize, s] }, params[:status]),
+        include_blank: t(".all"),
+        class: "form-select status-filter-input",
+        onchange: "this.form.submit()" %>
+    </div>
+
+    <div class="col-md-3">
+      <%= label_tag :request_date_from, t(".request_date_from"), class: "form-label" %>
+      <%= date_field_tag :request_date_from, params[:request_date_from], class: "form-control", onchange: "this.form.submit()" %>
+    </div>
+
+    <div class="col-md-3">
+      <%= label_tag :request_date_to, t(".request_date_to"), class: "form-label" %>
+      <%= date_field_tag :request_date_to, params[:request_date_to], class: "form-control", onchange: "this.form.submit()" %>
+    </div>
+  </div>
+<% end %>
+
+<!-- Borrow Requests Table -->
+<table class="table table-bordered table-striped">
+  <thead>
+    <tr>
+      <th><%= t(".seq") %></th>
+      <th><%= t(".request_date") %></th>
+      <th><%= t(".start_date") %></th>
+      <th><%= t(".end_date") %></th>
+      <th><%= t(".status") %></th>
+      <th><%= t(".actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= render partial: "borrow_request_row", 
+               collection: @borrow_requests.each_with_index.map { |req, idx| [req, @pagy.offset + idx + Settings.digits.digit_1] },
+               as: :req_with_index %>
+  </tbody>
+</table>
+
+<%== pagy_bootstrap_nav(@pagy) %>

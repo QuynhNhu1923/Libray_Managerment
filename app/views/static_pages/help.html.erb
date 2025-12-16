@@ -1,0 +1,8 @@
+<% provide :title, t(".title") %>
+<h1><%= t(".heading") %></h1>
+<p>
+  <%= t(".description_html",
+    link1: link_to(t(".link1"), Settings.links.rails_help, target: "_blank"),
+    link2: link_to(t(".link2"), Settings.links.rails_book, target: "_blank")
+  ).html_safe %>
+</p>

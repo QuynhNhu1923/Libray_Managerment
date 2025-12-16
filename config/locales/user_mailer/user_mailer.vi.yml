@@ -1,0 +1,36 @@
+vi:
+  user_mailer:
+    activation_subject: "Kích hoạt tài khoản"
+    greeting: "Chào"
+    welcome_message: "Chào mừng bạn đến với Sample App!"
+    activate_your_account: "Kích hoạt tài khoản của bạn"
+    borrow_request_approved_subject: "Yêu cầu mượn sách của bạn đã được phê duyệt"
+    borrow_request_rejected_subject: "Yêu cầu mượn sách của bạn đã bị từ chối"
+
+    borrow_request_approved:
+      title: "Yêu cầu Mượn Sách Đã Được Phê Duyệt!"
+      greeting: "Kính gửi %{name},"
+      message: "Yêu cầu mượn sách của bạn đã được nhân viên thư viện phê duyệt."
+      request_details: "Chi tiết Yêu Cầu:"
+      request_id: "ID Yêu Cầu"
+      start_date: "Ngày Bắt Đầu Mượn"
+      end_date: "Ngày Hết Hạn Trả"
+      books: "Sách Đã Được Phê Duyệt:"
+      next_steps: "Vui lòng đến thư viện trong khoảng thời gian đã chỉ định để nhận sách của bạn."
+      footer: "Cảm ơn bạn đã sử dụng hệ thống quản lý thư viện của chúng tôi."
+
+    borrow_request_rejected:
+      title: "Yêu cầu Mượn Sách Bị Từ Chối"
+      greeting: "Kính gửi %{name},"
+      message: "Chúng tôi rất tiếc phải thông báo rằng yêu cầu mượn sách của bạn đã bị từ chối."
+      request_details: "Chi tiết Yêu Cầu:"
+      request_id: "ID Yêu Cầu"
+      request_date: "Ngày Yêu Cầu"
+      books: "Sách Đã Yêu Cầu:"
+      admin_note: "Lý do từ chối"
+      next_steps: "Bạn có thể gửi yêu cầu mới hoặc liên hệ với thư viện để biết thêm thông tin."
+      footer: "Cảm ơn bạn đã thông cảm."
+  account_activations:
+    edit:
+      success: "Tài khoản đã được kích hoạt!"
+      error: "Liên kết kích hoạt không hợp lệ"

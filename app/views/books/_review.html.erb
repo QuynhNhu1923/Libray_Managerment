@@ -1,0 +1,27 @@
+<div class="d-flex mb-5 pb-4 border-bottom">
+  <!-- Avatar + Info -->
+  <div class="me-4" style="width: 140px;">
+    <div class="d-flex flex-column align-items-center">
+      <% if review.user&.image.attached? %>
+        <%= link_to image_tag(url_for(review.user.avatar), class: "rounded-circle mb-2 review-avatar"), user_path(review.user) %>
+      <% else %>
+        <%= link_to image_tag(Settings.images.default_author, class: "rounded-circle mb-2 review-avatar"), user_path(review.user) %>
+      <% end %>
+
+      <strong class="text-center">
+        <%= link_to review.user.name, user_path(review.user), class: "text-dark d-block mt-2" %>
+      </strong>
+    </div>
+  </div>
+
+  <!-- Review content -->
+  <div class="flex-grow-1">
+    <div class="text-muted mb-1">
+      <%= review.created_at.strftime(Settings.date_format.long) %>
+    </div>
+    <div class="mb-2">
+      <%= "⭐" * review.score %>
+    </div>
+    <p><%= review.comment %></p>
+  </div>
+</div>

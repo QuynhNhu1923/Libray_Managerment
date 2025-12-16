@@ -1,0 +1,4 @@
+en:
+  shared:
+    form:
+      errors: "%{count} errors:"

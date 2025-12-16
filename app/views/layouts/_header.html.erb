@@ -1,0 +1,87 @@
+<!-- Sidebar -->
+<div class="sidebar d-flex flex-column">
+  <h3 class="fw-bold text-primary sidebar-title">
+    My <span class="text-danger">Book</span><br />
+    <span class="text-danger shelf-text">Shelf</span>
+  </h3>
+
+  <% if user_signed_in? && current_user%>
+    <% if admin_user? %>
+      <nav class="nav flex-column">
+        <div class="nav-item"><%= link_to "📊 #{t('sidebar.dashboard')}", admin_report_path, class: "nav-link #{'active' if params[:controller] == "admin/reports"}" %></div>
+        <div class="nav-item"><%= link_to "👥 #{t('sidebar.users')}", admin_users_path, class: "nav-link #{'active' if params[:controller] == "admin/users"}" %></div>
+        <div class="nav-item"><%= link_to "📥 #{t('sidebar.borrow_requests')}", admin_borrow_requests_path, class: "nav-link #{'active' if current_page?(admin_borrow_requests_path)}" %></div>
+        <div class="nav-item"><%= link_to "📚 #{t('sidebar.books')}", admin_books_path, class: "nav-link #{"active" if params[:controller] == "admin/books"}" %></div>
+        <div class="nav-item"><%= link_to "✍️ #{t('sidebar.authors')}", admin_authors_path, class: "nav-link #{"active" if params[:controller] == "admin/authors"}" %></div>
+        <div class="nav-item"><%= link_to "🗂 #{t('sidebar.categories')}", admin_categories_path, class: "nav-link #{"active" if params[:controller] == "admin/categories"}" %></div>
+        <div class="nav-item"><%= link_to "🏢 #{t('sidebar.publishers')}", admin_publishers_path, class: "nav-link #{"active" if params[:controller] == "admin/publishers"}" %></div>
+      </nav>
+    <% else %>
+      <nav class="nav flex-column">
+        <div class="nav-item"><%= link_to "🏠 #{t("sidebar.home")}", root_path, class: "nav-link #{"active" if current_page?(root_path)}" %></div>
+        <div class="nav-item"><%= link_to "🔍 #{t("sidebar.search")}", search_books_path, class: "nav-link" %></div>
+        <div class="nav-item"><%= link_to "⭐ #{t("sidebar.favorite")}", favorites_user_path(current_user), class: "nav-link" %></div>
+        <div class="nav-item"><%= link_to "👤 #{t("sidebar.follow")}", follows_user_path(current_user), class: "nav-link" %></div>
+        <div class="nav-item"><%= link_to "📚 #{t("sidebar.borrow_list")}", borrow_request_index_path, class: "nav-link #{'active' if current_page?(borrow_request_index_path)}" %></div>
+      </nav>
+    <% end %>
+  <% else %>
+    <nav class="nav flex-column">
+      <div class="nav-item"><%= link_to "🏠 #{t("sidebar.home")}", root_path, class: "nav-link #{"active" if current_page?(root_path)}" %></div>
+      <div class="nav-item"><%= link_to "🔍 #{t("sidebar.search")}", search_books_path, class: "nav-link" %></div>
+    </nav>
+  <% end %>
+</div>
+
+<!-- Topbar -->
+<div class="topbar d-flex align-items-center justify-content-between px-6 py-2 bg-light shadow-sm">
+  <% if user_signed_in? && current_user %>
+    <div class="left-content">
+      <span class="fw-bold fs-5">
+        <%= gravatar_for current_user, size: 30 if current_user %>
+        <%= current_user&.name %>
+      </span>
+    </div>
+
+    <div class="right-buttons d-flex align-items-center gap-4">
+      <!-- Giờ và ngày -->
+      <div class="text-muted small text-end" id="current-time">
+        <div class="fw-bold fs-3" id="current-hour">--:--</div>
+        <div class="fs-6" id="current-date">--/--/----</div>
+      </div>
+
+      <!-- Dropdown ⚙️ -->
+      <div class="dropdown">
+        <button class="btn text-dark fs-4 dropdown-toggle" type="button" id="settingsDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+          ⚙️
+        </button>
+        <ul class="dropdown-menu">
+          <li><%= link_to t("topbar.profile"), current_user %></li>
+          <li><%= link_to t("topbar.settings"), edit_user_path(current_user) %></li>
+          <li><hr class="dropdown-divider"></li>
+          <li><%= link_to t("topbar.log_out"), destroy_user_session_path, data: { "turbo-method": :delete , method: :delete }%></li>
+        </ul>
+      </div>
+    </div>
+  <% else %>
+    <div class="left-content">
+      <span class="fw-bold fs-5">👤 <%= t("topbar.guest") %></span>
+    </div>
+
+    <div class="right-buttons">
+      <%= link_to t("topbar.sign_in"), new_user_session_path, class: "btn btn-dark rounded-pill px-5 py-2 me-5 fs-6" %>
+      <%= link_to t("topbar.sign_up"), new_user_registration_path, class: "btn btn-dark rounded-pill px-5 py-2 fs-6" %>
+    </div>
+  <% end %>
+</div>
+
+<!-- Language Switcher -->
+<div class="dropdown locale-switcher">
+  <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="localeDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+    🌐 <%= t("language") %>
+  </button>
+  <ul class="dropdown-menu">
+    <li><%= link_to t("languages.en"), request.params.merge(locale: :en)%></li>
+    <li><%= link_to t("languages.vi"), request.params.merge(locale: :vi)%></li>
+  </ul>
+</div>

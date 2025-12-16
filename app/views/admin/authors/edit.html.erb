@@ -1,0 +1,7 @@
+<div class="card shadow-sm p-4">
+  <h3 class="mb-4 fw-bold"><%= t("admin.authors.actions.edit_title") %></h3>
+  <%= render "form",
+        author: @author,
+        submit_text: t("admin.authors.actions.update"),
+        cancel_path: admin_author_path(@author) %>
+</div>

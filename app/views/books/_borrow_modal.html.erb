@@ -1,0 +1,49 @@
+<!-- Modal -->
+<div class="modal fade" id="borrowModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content borrow-modal-content">
+      
+      <!-- Close button -->
+      <button type="button" class="borrow-btn-close" data-bs-dismiss="modal">&times;</button>
+
+      <!-- Modal header -->
+      <div class="modal-header justify-content-center border-bottom-0">
+        <h5 class="modal-title"><%= t(".add_to_borrow_request") %></h5>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body borrow-modal-body">
+        <div class="row">
+          <!-- Left side: Image -->
+          <div class="col-md-4 borrow-modal-left p-3 mb-2">
+            <% if @book.image.present? %>
+              <%= image_tag @book.image, alt: @book.title, class: "img-thumbnail mb-2 w-100" %>
+            <% else %>
+              <%= image_tag Settings.image.default_cover, alt: "No image", class: "img-thumbnail mb-2 w-100" %>
+            <% end %>
+            <div class="info-box">
+              <p><strong><%= t(".total_quantity") %>:</strong> <span class="highlight"><%= @book.total_quantity %></span></p>
+              <p><strong><%= t(".available_quantity") %>:</strong> <span class="highlight"><%= @book.available_quantity %></span></p>
+            </div>
+          </div>
+
+          <!-- Right side: Form -->
+          <div class="col-md-8 borrow-modal-right p-3 mb-2">
+            <h5><%= t(".book_name") %></h5>
+            <div class="info-box mb-3 book-title-box">
+              <h5 class="highlight"><%= @book.title %></h5>
+            </div>
+            <%= form_with url: borrow_book_path(@book), method: :post, local: true do |f| %>
+              <div class="info-box mb-3">
+                <%= f.label :quantity, t(".quantity"), class: "form-label" %>
+                <%= f.number_field :quantity, value: 1, min: 1, max: @book.available_quantity, class: "form-control borrow-quantity-box" %>
+              </div>
+              <%= f.submit t(".add_to_borrow_list"), class: "btn btn-primary w-100 borrow-submit" %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

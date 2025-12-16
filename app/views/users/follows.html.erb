@@ -1,0 +1,153 @@
+<% provide :title, t(".page_title") %>
+
+<!-- Page Header -->
+<div class="row mb-4">
+  <div class="col-12">
+    <div class="d-flex justify-content-between align-items-center">
+      <div>
+        <h2 class="fw-bold mb-1">
+          <i class="bi bi-people-fill text-primary me-2"></i>
+          <%= t(".following_authors") %>
+        </h2>
+      </div>
+    </div>
+    <hr class="mt-3">
+  </div>
+</div>
+
+<% if @favorite_authors.any? %>
+  <!-- Pagination Top -->
+  <% if @pagy && @pagy.pages > 1 %>
+    <div class="row mb-3">
+      <div class="col-12 d-flex justify-content-center">
+        <%== pagy_bootstrap_nav(@pagy) %>
+      </div>
+    </div>
+  <% end %>
+
+  <!-- Authors Grid -->
+  <div class="row">
+    <% @favorite_authors.each do |author| %>
+      <div class="col-md-6 col-lg-4 col-xl-3 mb-4">
+        <div class="card h-100 shadow-sm">
+          <!-- Author Image -->
+          <% if author.image.attached? %>
+            <%= image_tag url_for(author.image),
+                class: "card-img-top author-card-image",
+                alt: author.name %>
+          <% else %>
+            <div class="card-img-top d-flex justify-content-center align-items-center author-card-placeholder">
+              <i class="bi bi-person-circle text-muted author-placeholder-icon"></i>
+              <h1><%= t(".no_image") %></h1>
+            </div>
+          <% end %>
+
+          <!-- Following Badge -->
+          <div class="position-absolute top-0 end-0 m-2">
+            <span class="badge bg-success">
+              <i class="bi bi-person-check-fill"></i>
+            </span>
+          </div>
+
+          <!-- Author Info -->
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title mb-2">
+              <%= link_to author.name,
+                  author_path(author),
+                  class: "text-decoration-none text-dark" %>
+            </h5>
+
+            <div class="card-text flex-grow-1">
+              <% if author.bio.present? %>
+                <small class="text-muted d-block mb-2">
+                  <i class="bi bi-person-lines-fill me-1"></i>
+                  <%= truncate(author.bio, length: 80) %>
+                </small>
+              <% end %>
+
+              <% if author.nationality.present? %>
+                <small class="text-muted d-block mb-2">
+                  <i class="bi bi-geo-alt me-1"></i>
+                  <%= author.nationality %>
+                </small>
+              <% end %>
+            </div>
+          </div>
+          <!-- Card Footer with Actions -->
+          <div class="card-footer bg-transparent">
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="btn-group" role="group">
+                <%= link_to author_path(author), class: "btn btn-outline-primary btn-sm" do %>
+                  <i class="bi bi-eye me-1"></i><%= t(".view_profile") %>
+                <% end %>
+              </div>
+
+              <!-- Unfollow Button -->
+              <div id="favorite_button_author_<%= author.id %>">
+                <%= render "books/favorite_button", item: author %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+  <!-- Pagination Bottom -->
+  <% if @pagy && @pagy.pages > 1 %>
+    <div class="row mt-4">
+      <div class="col-12 d-flex justify-content-center">
+        <%== pagy_bootstrap_nav(@pagy) %>
+      </div>
+    </div>
+  <% end %>
+
+  <!-- Statistics -->
+  <div class="row mt-5">
+    <div class="col-12">
+      <div class="bg-light rounded p-4 text-center">
+        <div class="row">
+          <div class="col-md-4">
+            <h4 class="text-primary mb-1"><%= @favorite_authors.count %></h4>
+            <small class="text-muted"><%= t(".total_following") %></small>
+          </div>
+          <div class="col-md-4">
+            <h4 class="text-success mb-1">
+              <%= @author_stats[:total_books] %>
+            </h4>
+            <small class="text-muted"><%= t(".total_books_by_authors") %></small>
+          </div>
+          <div class="col-md-4">
+            <h4 class="text-info mb-1">
+              <%= @author_stats[:avg_books] %>
+            </h4>
+            <small class="text-muted"><%= t(".avg_books_per_author") %></small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<% else %>
+  <!-- Empty State -->
+  <div class="row">
+    <div class="col-12">
+      <div class="text-center py-5">
+        <div class="mb-4">
+          <i class="bi bi-people text-muted empty-state-icon"></i>
+        </div>
+        <h3 class="text-muted mb-3"><%= t(".no_following_title") %></h3>
+        <p class="text-muted mb-4"><%= t(".no_following_description") %></p>
+
+        <div class="d-flex justify-content-center gap-3">
+          <%= link_to root_path, class: "btn btn-outline-secondary" do %>
+            <i class="bi bi-house me-2"></i><%= t(".back_to_home") %>
+          <% end %>
+          <%= link_to search_books_path, class: "btn btn-primary" do %>
+            <i class="bi bi-search me-2"></i><%= t(".discover_authors") %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>

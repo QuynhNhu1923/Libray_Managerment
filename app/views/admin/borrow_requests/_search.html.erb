@@ -1,0 +1,19 @@
+<%= search_form_for @q, url: admin_borrow_requests_path, method: :get, html: { class: "row justify-content-center g-3 mb-3" } do |f| %>
+
+  <% borrow_request_search_inputs.each do |i| %>
+    <div class="col-md-2 d-flex flex-column">
+      <%= f.label i[:attr], i[:label], class: "form-label mb-1" %>
+      <% if i[:type] == :select %>
+        <%= f.select i[:attr], i[:options], { include_blank: i[:include_blank] }, class: "form-select form-select-sm flex-grow-1" %>
+      <% else %>
+        <%= f.send("#{i[:type]}_field", i[:attr], class: "form-control form-control-sm flex-grow-1", placeholder: i[:placeholder]) %>
+      <% end %>
+    </div>
+  <% end %>
+  
+  <div class="col-md-1 d-flex flex-column">
+    <%= f.label :submit, "&nbsp;".html_safe, class: "form-label mb-1" %>
+    <%= f.submit t(".search"), class: "btn btn-primary btn-sm" %>
+  </div>
+
+<% end %>

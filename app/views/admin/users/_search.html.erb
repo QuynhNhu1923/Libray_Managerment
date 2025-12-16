@@ -1,0 +1,19 @@
+<%= search_form_for @q, url: admin_users_path, method: :get, html: { class: "row justify-content-center g-3 mb-3" } do |f| %>
+
+  <% user_search_inputs.each do |i| %>
+    <div class="col-md-2">
+      <%= f.label i[:attr], i[:label], class: "form-label mb-1" %>
+      <% if i[:type] == :select %>
+        <%= f.select i[:attr], i[:options], { include_blank: i[:include_blank] }, class: "form-select form-search" %>
+      <% else %>
+        <%= f.send("#{i[:type]}_field", i[:attr], class: "form-control form-search", placeholder: i[:placeholder]) %>
+      <% end %>
+    </div>
+  <% end %>
+
+  <div class="col-md-1">
+    <%= f.label :submit, "&nbsp;".html_safe, class: "form-label mb-1" %>
+    <%= f.submit t(".search"), class: "btn btn-primary form-search w-100" %>
+  </div>
+
+<% end %>

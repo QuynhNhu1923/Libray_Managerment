@@ -1,0 +1,29 @@
+<% provide :title, t(".page_title") %>
+
+<div class="mt-4">
+  <div class="row">
+    <div class="col-12">
+      <h2><%= t(".all_books") %></h2>
+      <p class="text-muted"><%= t(".browse_collection") %></p>
+    </div>
+  </div>
+
+  <div class="row">
+    <% @books.each do |book| %>
+      <div class="col-md-6 col-lg-4 col-xl-3 mb-4">
+        <div class="card h-100 shadow-sm">
+          <%= render "books/book_card", book: book %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+  <!-- Pagination -->
+  <% if @pagy.pages > 1 %>
+    <div class="row mt-4">
+      <div class="col-12 d-flex justify-content-center">
+        <%== pagy_bootstrap_nav(@pagy) %>
+      </div>
+    </div>
+  <% end %>
+</div>

@@ -1,0 +1,18 @@
+<div id="community_rating">
+  <div class="mb-1">⭐ <%= @book.average_rating %> - <%= pluralize(@book.reviews.count, "review") %></div>
+  <% 5.downto(1) do |star| %>
+    <% count = @review_counts[star] || 0 %>
+    <% percent = @total_reviews > 0 ? (count.to_f / @total_reviews * 100).round : 0 %>
+    <div class="d-flex align-items-center mb-2">
+      <div><%= star %> <%= t(".stars") %></div>
+      <div class="d-flex align-items-center flex-grow-1 mx-2">
+        <div class="star-progress w-100">
+          <div class="star-progress-bar star-progress-bar-<%= star %>"
+               style="width: <%= percent %>%;" role="progressbar"
+               aria-valuenow="<%= percent %>" aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
+      </div>
+      <div><%= count %></div>
+    </div>
+  <% end %>
+</div>

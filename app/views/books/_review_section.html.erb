@@ -1,0 +1,37 @@
+<%= turbo_frame_tag "review_section" do %>
+  <div class="review-wrapper text-center">
+    <% if review&.persisted? %>
+      <!-- Đã có review -->
+      <div id="user_review" class="alert alert-info mt-3">
+        <p><%= t(".your_reviewed") %>:</p>
+        <p>⭐ <%= review.score %></p>
+        <p><%= review.comment %></p>
+      </div>
+
+      <%= button_to t(".delete_review"),
+            destroy_review_book_path(book),
+            method: :delete,
+            data: { turbo_confirm: t(".are_you_sure") },
+            class: "btn btn-danger btn-sm mb-3" %>
+
+      <!-- Nút cập nhật -->
+      <button id="writeReviewBtn" class="btn btn-primary mt-3">
+        <%= t(".update_review") %>
+      </button>
+
+      <!-- Form cập nhật (ẩn mặc định) -->
+      <div id="reviewForm" class="d-none mt-3">
+        <%= render "books/review_form", book: book, review: review %>
+      </div>
+    <% else %>
+      <!-- Chưa có review -->
+      <button id="writeReviewBtn" class="btn btn-primary write_a_review_button">
+        <%= t(".write_review") %>
+      </button>
+
+      <div id="reviewForm" class="d-none mt-3">
+        <%= render "books/review_form", book: book, review: Review.new %>
+      </div>
+    <% end %>
+  </div>
+<% end %>

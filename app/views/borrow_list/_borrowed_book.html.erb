@@ -1,0 +1,19 @@
+<tr>
+  <td><%= offset + borrowed_book_counter + Settings.digits.digit_1 %></td>
+  <td>
+    <% if borrowed_book.book.image.attached? %>
+      <%= image_tag borrowed_book.book.image.variant(
+            resize_to_limit: [
+              Settings.borrowed_book.image.width,
+              Settings.borrowed_book.image.height
+            ]
+          ),
+          class: "img-thumbnail" %>
+    <% else %>
+      <%= t(".no_image") %>
+    <% end %>
+  </td>
+  <td><%= borrowed_book.book.title %></td>
+  <td><%= borrowed_book.book.author&.name %></td>
+  <td><%= borrowed_book.quantity %></td>
+</tr>

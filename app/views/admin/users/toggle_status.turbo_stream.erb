@@ -1,0 +1,27 @@
+<%= turbo_stream.replace dom_id(@user, :status_badge) do %>
+  <span id="<%= dom_id(@user, :status_badge) %>" 
+        class="badge <%= user_status_color(@user.status) %>">
+    <%= @user.status.capitalize %>
+  </span>
+<% end %>
+
+<%= turbo_stream.replace dom_id(@user, :toggle_button) do %>
+  <%= render "toggle_status_form", user: @user %>
+<% end %>
+
+<%= turbo_stream.replace "flash" do %>
+  <% if flash.any? %>
+    <div id="flash">
+      <% flash.each do |type, message| %>
+        <div class="alert alert-<%= type == "notice" ? "success" : "danger" %>">
+          <%= message %>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+<% end %>
+
+
+
+
+

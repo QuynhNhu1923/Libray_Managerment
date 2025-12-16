@@ -1,0 +1,15 @@
+<%= turbo_frame_tag "favorite_button_#{item.model_name.singular}_#{item.id}" do %>
+  <% if current_user && current_user.favorited?(item) %>
+    <%= button_to t(".unfavorite"),
+        (item.is_a?(Book) ? remove_from_favorite_book_path(item) : remove_from_favorite_author_path(item)),
+        method: :delete,
+        class: "btn btn-danger add_to_favorite_button",
+        form: { data: { turbo: true } } %>
+  <% else %>
+    <%= button_to t(".add_to_favorite"),
+        (item.is_a?(Book) ? add_to_favorite_book_path(item) : add_to_favorite_author_path(item)),
+        method: :post,
+        class: "btn btn-primary add_to_favorite_button",
+        form: { data: { turbo: true } } %>
+  <% end %>
+<% end %>

@@ -1,0 +1,30 @@
+<% if books.present? %>
+  <div class="table-responsive">
+    <table class="table table-hover table-bordered align-middle text-center">
+      <thead class="table-light">
+        <tr>
+          <th><%= t(".no") %></th>
+          <th><%= t(".title") %></th>
+          <th><%= t(".author") %></th>
+          <th><%= t(".borrow_count") %></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% books.each_with_index do |book, idx| %>
+          <tr>
+            <td><%= pagy.offset + idx + 1 %></td>
+            <td><%= book.title %></td>
+            <td><%= book.author.name %></td>
+            <td><%= book.borrow_count %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="d-flex justify-content-center mt-3">
+    <%== pagy_bootstrap_nav(pagy) if pagy.pages > 1 %>
+  </div>
+<% else %>
+  <p class="text-muted"><%= t(".no_data") %></p>
+<% end %>

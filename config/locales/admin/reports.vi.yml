@@ -1,0 +1,18 @@
+vi:
+  admin:
+    reports:
+      show:
+        no: "STT"
+        title: "Tên sách"
+        author: "Tác giả"
+        borrow_count: "Số lượt mượn"
+        no_data: "Không có dữ liệu cho bộ lọc này."
+        most_borrowed_books: "Sách được mượn nhiều nhất"
+        borrowed_vs_returned: "Tỉ lệ mượn vs trả (%)"
+        title: "Báo cáo"
+        most_borrowed_books: "Sách được mượn nhiều nhất"
+        all_months: "Tất cả các tháng"
+        year: "Năm"
+        filter: "Lọc"
+        borrowed: "Đang mượn"
+        returned: "Đã trả"

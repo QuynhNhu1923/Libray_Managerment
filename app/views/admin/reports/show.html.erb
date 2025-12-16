@@ -1,0 +1,39 @@
+<% content_for :title, t(".title") %>
+
+<div class="row">
+  <div class="col-lg-8 col-md-12 mb-4">
+    <div class="card shadow-sm">
+      <div class="card-body">
+        <h3 class="card-title mb-3"><%= t(".most_borrowed_books") %></h3>
+
+        <div class="mb-3">
+          <%= form_with url: admin_report_path, method: :get, local: true, class: "row g-2" do |f| %>
+            <div class="col-md-4">
+              <%= select_tag :month,
+                  options_for_select((1..12).map { |m| [Date::MONTHNAMES[m], m] }, params[:month]),
+                  include_blank: t(".all_months"),
+                  class: "form-select" %>
+            </div>
+            <div class="col-md-4">
+              <%= number_field_tag :year, params[:year], placeholder: t(".year"), class: "form-control" %>
+            </div>
+            <div class="col-md-4">
+              <%= f.submit t(".filter"), class: "btn btn-primary w-100" %>
+            </div>
+          <% end %>
+        </div>
+
+        <%= render partial: "most_borrowed_books", locals: { pagy: @pagy, books: @most_borrowed_books } %>
+      </div>
+    </div>
+  </div>
+  
+  <div class="col-lg-4 col-md-12 mb-4">
+    <div class="card shadow-sm">
+      <div class="card-body">
+        <h5 class="card-title"><%= t(".borrowed_vs_returned") %></h5>
+        <%= pie_chart @borrow_vs_return_percent, height: "250px", suffix: "%" %>
+      </div>
+    </div>
+  </div>
+</div>

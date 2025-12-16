@@ -1,0 +1,33 @@
+<%= form_with model: [:admin, author], local: true, class: "needs-validation" do |f| %>
+  <%= render "admin/shared/error_messages", object: author %>
+
+  <div class="mb-3">
+    <%= f.label :name, t("admin.authors.attributes.name"), class: "form-label" %>
+    <%= f.text_field :name, class: "form-control", required: true %>
+  </div>
+
+  <div class="mb-3">
+    <%= f.label :nationality, t("admin.authors.attributes.nationality"), class: "form-label" %>
+    <%= f.text_field :nationality, class: "form-control" %>
+  </div>
+
+  <div class="mb-3">
+    <%= f.label :bio, t("admin.authors.attributes.bio"), class: "form-label" %>
+    <%= f.text_area :bio, rows: 4, class: "form-control" %>
+  </div>
+
+  <div class="mb-3">
+    <%= f.label :birth_date, t("admin.authors.attributes.birth_date"), class: "form-label" %>
+    <%= f.date_field :birth_date, class: "form-control" %>
+  </div>
+
+  <div class="mb-3">
+    <%= f.label :death_date, t("admin.authors.attributes.death_date"), class: "form-label" %>
+    <%= f.date_field :death_date, class: "form-control" %>
+  </div>
+
+  <div class="d-flex gap-2">
+    <%= f.submit submit_text, class: "btn btn-success btn-sm w-auto" %>
+    <%= link_to t("admin.authors.actions.cancel"), cancel_path, class: "btn btn-secondary" %>
+  </div>
+<% end %>

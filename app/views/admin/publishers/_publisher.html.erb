@@ -1,0 +1,13 @@
+<tr>
+  <td><%= @pagy.offset + idx + 1 %></td>
+  <td class="text-start"><%= publisher.name %></td>
+  <td><%= publisher.created_at.strftime("%d/%m/%Y %H:%M") %></td>
+  <td>
+    <%= link_to t("admin.publishers.actions.view"), admin_publisher_path(publisher), class: "btn btn-sm btn-primary me-1" %>
+    <%= link_to t("admin.publishers.actions.edit"), edit_admin_publisher_path(publisher), class: "btn btn-sm btn-success me-1" %>
+    <%= link_to t("admin.publishers.actions.delete"), admin_publisher_path(publisher),
+                data: { turbo_method: :delete },
+                onclick: "return confirm('#{t("admin.publishers.confirmations.delete")}');",
+                class: "btn btn-sm btn-danger" %>
+  </td>
+</tr>

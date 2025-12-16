@@ -1,0 +1,9 @@
+<div class="mt-4">
+  <%= link_to t(".back"), admin_users_path, class: "btn btn-secondary mt-3" %>
+  <h3 class="fw-bold mb-4 text-center"><%= t(".title") %></h3>
+  <!-- User info -->
+  <%= render "user_info", user: @user %>
+
+  <!-- Borrow requests -->
+  <%= render "borrow_requests_table", borrow_requests: @borrow_requests, pagy: @pagy %>
+</div>

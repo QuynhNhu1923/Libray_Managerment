@@ -1,0 +1,54 @@
+en:
+  admin:
+    users:
+      index:
+        title: "User Management"
+        id: "No."
+        name: "Name"
+        email: "Email"
+        username: "Username"
+        action: "Action"
+        view: "View"
+        status: "Status"
+        no_users: "No users found"
+      search:
+        search_email: "Email"
+        search_email_placeholder: "Enter email"
+        search_name: "Name"
+        search_name_placeholder: "Enter user name"
+        status_eq: "Status"
+        all: "All"
+        search: "Search"
+      flash:
+        unauthorized_access: "You are not authorized to access this page."
+        not_found: "User not found"
+        update_success: "User status updated successfully"  
+      show:
+        title: "User Manager Details"
+        back: "← Back to Users Manager List"
+      user_info:
+          title: "User Information"
+          ID: "ID"
+          name: "Name"
+          phone: "Phone Number"
+          gender: "Gender"
+          age: "Age"
+          address: "Address"
+          email: "Email"
+          status: "Status"
+          created_at: "Created At"
+      toggle_status_form:
+          set_active: "Set Active"
+          set_inactive: "Set Inactive"
+          confirm: "Are you sure you want to change the status of this user?"
+      toggle_status:
+          update_success: "User status updated successfully"
+          update_fail: "Failed to update user status"
+      borrow_requests_table:
+          title: "Borrow Requests"
+          no_requests: "No borrow requests found"
+          id: "Request ID"
+          request_date: "Request Date"
+          action: "Action"
+          status: "Status"
+          view: "View"

@@ -1,0 +1,10 @@
+<%= form_for user,
+             url: toggle_status_admin_user_path(user),
+             method: :patch,
+             html: { class: "d-inline" },
+             remote: true do |f| %>
+
+  <%= f.submit (user.active? ? t(".set_inactive") : t(".set_active")),
+               class: opposite_user_status_color(user.status),
+               data: { turbo_confirm: t(".confirm") } %>
+<% end %>

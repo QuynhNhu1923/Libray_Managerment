@@ -1,0 +1,29 @@
+<div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
+  <h2 style="color: #28a745;">📚 <%= t("user_mailer.borrow_request_approved.title") %></h2>
+
+  <p><%= t("user_mailer.borrow_request_approved.greeting", name: @user.name) %></p>
+
+  <p><%= t("user_mailer.borrow_request_approved.message") %></p>
+
+  <div style="background-color: #f8f9fa; padding: 15px; border-radius: 5px; margin: 20px 0;">
+    <h4><%= t("user_mailer.borrow_request_approved.request_details") %></h4>
+    <ul>
+      <li><strong><%= t("user_mailer.borrow_request_approved.request_id") %>:</strong> #<%= @borrow_request.id %></li>
+      <li><strong><%= t("user_mailer.borrow_request_approved.start_date") %>:</strong> <%= @borrow_request.start_date.strftime("%d/%m/%Y") %></li>
+      <li><strong><%= t("user_mailer.borrow_request_approved.end_date") %>:</strong> <%= @borrow_request.end_date.strftime("%d/%m/%Y") %></li>
+    </ul>
+
+    <h5><%= t("user_mailer.borrow_request_approved.books") %>:</h5>
+    <ul>
+      <% @books.each do |book| %>
+        <li><%= book.title %> - <%= book.author.name %></li>
+      <% end %>
+    </ul>
+  </div>
+
+  <p><%= t("user_mailer.borrow_request_approved.next_steps") %></p>
+
+  <p style="color: #6c757d; font-size: 14px;">
+    <%= t("user_mailer.borrow_request_approved.footer") %>
+  </p>
+</div>

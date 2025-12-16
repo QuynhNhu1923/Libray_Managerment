@@ -1,0 +1,37 @@
+<div class="card shadow-sm p-4">
+  <div class="row">
+    <div class="col-md-4 text-center">
+      <div class="text-muted fst-italic">
+        <%= t("admin.authors.placeholders.no_image") %>
+      </div>
+    </div>
+
+    <div class="col-md-8">
+      <h3 class="mb-3 text-primary"><%= @author.name %></h3>
+
+      <p><strong><%= t("admin.authors.attributes.bio") %>:</strong>
+        <%= @author.bio.presence || t("admin.authors.placeholders.no_bio") %></p>
+
+      <p><strong><%= t("admin.authors.attributes.birth_date") %>:</strong>
+        <%= @author.birth_date %></p>
+
+      <p><strong><%= t("admin.authors.attributes.death_date") %>:</strong>
+        <%= @author.death_date || t("admin.authors.placeholders.still_alive") %></p>
+
+      <p><strong><%= t("admin.authors.attributes.nationality") %>:</strong>
+        <%= @author.nationality %></p>
+
+      <p><strong><%= t("admin.authors.attributes.created_at") %>:</strong>
+        <%= @author.created_at.strftime(Settings.datetime_formats.default) %></p>
+
+      <div class="mt-4 d-flex gap-2">
+        <%= link_to t("admin.authors.actions.back"), admin_authors_path, class: "btn btn-secondary" %>
+        <%= link_to t("admin.authors.actions.edit"), edit_admin_author_path(@author), class: "btn btn-success" %>
+        <%= link_to t("admin.authors.actions.delete"), admin_author_path(@author),
+            data: { turbo_method: :delete },
+            class: "btn btn-danger",
+            onclick: "return confirm('#{t("admin.authors.confirmations.delete")}');" %>
+      </div>
+    </div>
+  </div>
+</div>

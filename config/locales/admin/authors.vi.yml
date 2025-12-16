@@ -1,0 +1,43 @@
+vi:
+  admin:
+    authors:
+      title: "Quản lý tác giả"
+      heading: "Danh sách tác giả"
+
+      actions:
+        add: "Thêm tác giả"
+        search: "Tìm kiếm"
+        view: "Xem"
+        edit: "Sửa"
+        delete: "Xóa"
+        update: "Cập nhật"
+        new_title: "Thêm tác giả mới"
+        save: "Lưu"
+
+      placeholders:
+        search: "Tìm theo tên"
+
+      attributes:
+        id: "Số thứ tự"
+        name: "Tên"
+        created_at: "Ngày tạo"
+        action: "Hành động"
+        bio: "Tiểu sử"
+        nationality: "Quốc tịch"
+        birth_date: "Ngày sinh"
+        death_date: "Ngày mất"
+
+      confirmations:
+        delete: "Bạn có chắc chắn muốn xóa tác giả này không?"
+
+      flash:
+        not_found: "Không tìm thấy tác giả."
+        create:
+          success: "Tác giả đã được tạo thành công."
+          failure: "Tạo tác giả thất bại."
+        update:
+          success: "Tác giả đã được cập nhật thành công."
+          failure: "Cập nhật tác giả thất bại."
+        destroy:
+          success: "Tác giả đã được xóa thành công."
+          failure: "Xóa tác giả thất bại."

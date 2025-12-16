@@ -1,0 +1,114 @@
+en:
+  admin:
+    borrow_requests:
+      status_form:
+        save: "Save"
+        cancel: "Cancel"
+      status_display:
+        change: "Change"
+      status:
+        pending: "Pending"
+        approved: "Approved"
+        rejected: "Rejected"
+        returned: "Returned"
+        overdue: "Overdue"
+        expired: "Expired"
+        canceled: "Canceled"
+        borrowed: "Borrowed"
+
+      index:
+        title: "Borrow Requests Management"
+        id: "No."
+        username: "Username"
+        request_date: "Request Date"
+        action: "Action"
+        status: "Status"
+        no_requests: "No borrow requests found"
+      search:
+        search_button: "Search"
+        search_username: "Username"
+        search_username_placeholder: "Enter username"
+        from_date: "Request From"
+        to_date: "Request To"
+        status: "Status"
+        all: "All"
+        search: "Search"
+      borrow_request:
+        action_view: "View"
+
+      show:
+        title: "Borrow requests items Management"
+        back: "← Back"
+        request_info:
+          full_name: "Full name"
+          email: "Email"
+          start_date: "Start date"
+          end_date: "End date"
+          request_date: "Request date"
+        status_info:
+          actual_return_date_label: "Actual return date"
+          actual_borrow_date_label: "Actual borrowed date"
+          approved_date_label: "Approved date"
+          need_update_reason_label: "Need update reason"
+          admin_note_label: "Admin note"
+          approved_by_label: "Approved by"
+          rejected_by_label: "Rejected by"
+          returned_by_label: "Returned by"
+          borrowed_by_label: "Borrowed by"
+        book_borrowed:
+          title: "Borrowed Books"
+          book_cover: "Cover"
+          book_title: "Title"
+          book_author: "Author"
+          book_published_year: "Published Year"
+          borrowed_quantity: "Quantity"
+          no_books: "No books borrowed"
+
+      status_change: "Status change"
+      change_status:
+        title: "Change status"
+        no_change: "No changes made to the status"
+        status_updated: "Status updated successfully"
+        invalid_format: "Invalid date format"
+        past_date: "The actual return date cannot be in the past"
+        future_date: "The actual return date cannot be in the future"
+
+      actual_return_date:
+        not_available: "N/A"
+      actual_borrow_date:
+        not_available: "N/A"
+      approved_date:
+        not_available: "N/A"
+      need_update_reason:
+        no_reason: "N/A"
+      admin_note:
+        no_note: "N/A"
+      approved_by:
+        not_approved: "Not Approved"
+      borrowed_by:
+        not_borrowed: "Not Borrowed"
+      rejected_by:
+        not_rejected: "Not Rejected"
+      returned_by:
+        not_returned: "Not Returned"
+
+      status_form_js:
+        status:
+          pending: "pending"
+          approved: "approved"
+          rejected: "rejected"
+          returned: "returned"
+          overdue: "overdue"
+          expired: "expired"
+          canceled: "canceled"
+          borrowed: "borrowed"
+        error:
+          admin_note_required: "Admin note is required when rejecting a borrow request"
+          invalid_date: "Please select a valid date"
+          date_not_in_future: "Actual return date cannot be in the future"
+          no_change_status: "No changes made to the status"
+      flash:
+        no_access: "You do not have permission to access this page"
+      errors:
+        not_enough_stock: "Books %{title} only has %{stock} copies available in stock."
+        mailer_failed: "Failed to send borrow request %{status} email: %{error}"

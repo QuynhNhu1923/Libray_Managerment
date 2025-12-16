@@ -1,0 +1,6 @@
+<% flash.each do |type, message| %>
+  <% next if message.blank? %>
+  <div class="alert alert-<%= type == "error" || type == "alert" ? "danger" : "success" %> mt-3" data-controller="flash">
+    <%= message %>
+  </div>
+<% end %>

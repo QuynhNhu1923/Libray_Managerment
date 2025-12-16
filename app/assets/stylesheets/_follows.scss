@@ -1,0 +1,43 @@
+.hover-card {
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.hover-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15) !important;
+}
+
+.author-card-image {
+  transition: transform 0.3s ease;
+}
+
+.hover-card:hover .author-card-image {
+  transform: scale(1.05);
+}
+
+.author-name-link {
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+.author-name-link:hover {
+  color: #0d6efd !important;
+}
+
+.author-card-image {
+  height: 350px;
+  object-fit: cover;
+}
+
+.author-card-placeholder {
+  height: 350px;
+  background-color: #f8f9fa;
+}
+
+.author-placeholder-icon {
+  font-size: 4rem;
+}
+
+.empty-state-icon {
+  font-size: 4rem;
+}

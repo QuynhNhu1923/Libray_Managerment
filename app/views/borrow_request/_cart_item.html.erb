@@ -1,0 +1,41 @@
+<tr id="cart-item-<%= item[:book].id %>" class="cart-item">
+  <td class="cart-item-image">
+    <%= image_tag(item[:book].image.presence || Settings.image.default_cover,
+                  alt: item[:book].title.presence || t(".no_image"),
+                  class: "img-thumbnail") %>
+  </td>
+
+  <td class="cart-item-title align-middle">
+    <%= link_to item[:book].title, book_path(item[:book]) %>
+  </td>
+
+  <td class="cart-item-quantity align-middle"><%= item[:book].available_quantity %></td>
+  <td class="cart-item-author align-middle"><%= item[:book].author.name %></td>
+
+  <td class="cart-item-input align-middle">
+    <%= number_field_tag "cart[#{item[:index]}][quantity]",
+                         item[:quantity],
+                         min: Settings.digits.digit_1,
+                         max: item[:book].available_quantity,
+                         class: "form-control auto-save text-center mb-0" %>
+    <%= hidden_field_tag "cart[#{item[:index]}][book_id]", item[:book].id %>
+  </td>
+
+  <td class="cart-item-select align-middle">
+    <%= hidden_field_tag "cart[#{item[:index]}][selected]", BorrowRequestController::NOT_SELECTED %>
+    <%= check_box_tag "cart[#{item[:index]}][selected]",
+                      BorrowRequestController::SELECTED,
+                      item[:selected].present?,
+                      class: "borrow-book-checkbox auto-save" %>
+  </td>
+
+  <td class="cart-item-action align-middle">
+    <button type="button"
+            class="btn btn-sm btn-danger js-remove-from-cart"
+            data-book-id="<%= item[:book].id %>"
+            data-url="<%= remove_from_borrow_cart_borrow_request_index_path(book_id: item[:book].id, format: :json) %>"
+            data-confirm="<%= t('.confirm_remove') %>">
+      <%= t(".remove") %>
+    </button>
+  </td>
+</tr>

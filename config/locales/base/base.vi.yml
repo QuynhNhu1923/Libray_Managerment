@@ -1,0 +1,56 @@
+vi:
+  language: Ngôn ngữ
+  languages:
+    en: "Tiếng Anh"
+    vi: "Tiếng Việt"
+  layouts:
+    application:
+      base_title: "Thư viện Sách" 
+  errors:
+    template:
+      header:
+        one: "1 lỗi khiến %{model} không thể được lưu"
+        other: "%{count} lỗi khiến %{model} không thể được lưu"
+
+  auth:
+    please_login: "Vui lòng đăng nhập để truy cập trang này."
+
+  time:
+    formats:
+      default: "%d/%m/%Y %H:%M"
+
+  topbar:
+    guest: Khách
+    sign_in: Đăng nhập
+    sign_up: Đăng ký
+    profile: Hồ sơ
+    settings: Cài đặt
+    log_out: Đăng xuất
+
+  sidebar:
+    dashboard: Bảng điều khiển
+    users: Người dùng
+    borrow_requests: Yêu cầu mượn
+    books: Sách
+    authors: Tác giả
+    categories: Thể loại
+    publishers: Nhà xuất bản
+    home: Trang chủ
+    search: Tìm kiếm
+    favorite: Yêu thích
+    follow: Theo dõi
+    borrow_list: Danh sách mượn
+
+  login_modal:
+    title: "Yêu cầu đăng nhập"
+    message: "Bạn cần đăng nhập để thực hiện thao tác này."
+    login_button: "Đăng nhập"
+    cancel_button: "Hủy"
+    close: "Đóng"
+
+  pagy:
+    info:
+      single_page:
+        one: "Hiển thị <b>%{count}</b> mục"
+        other: "Hiển thị <b>%{count}</b> mục"
+      multiple_pages: "Hiển thị mục <b>%{from}–%{to}</b> trong tổng số <b>%{count}</b>"

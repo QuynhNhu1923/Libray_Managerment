@@ -1,0 +1,7 @@
+<%= turbo_stream.append "borrow-flash-container", partial: "shared/flash", locals: { notice: t(".added_to_borrow_cart") } %>
+
+<%= turbo_stream.after "borrow-flash-container" do %>
+  <script>
+    hideModal("#borrowModal");
+  </script>
+<% end %>

@@ -1,0 +1,9 @@
+<div id="recommended-books-list">
+  <div class="d-flex flex-wrap home-books">
+    <%= render partial: "books/book", collection: @recommended_books, as: :book %>
+  </div>
+
+  <div class="d-flex justify-content-center mt-4">
+    <%== pagy_bootstrap_nav(@pagy_books, link_extra: 'data-remote="true"') %>
+  </div>
+</div>

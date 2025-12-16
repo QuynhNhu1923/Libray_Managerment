@@ -1,0 +1,49 @@
+vi:
+  admin:
+    publishers:
+      title: "Nhà xuất bản"
+      heading: "Quản lý nhà xuất bản"
+      edit_title: "Chỉnh sửa nhà xuất bản"
+      new_title: "Thêm nhà xuất bản mới"
+
+      flash:
+        not_found: "Không tìm thấy nhà xuất bản."
+        create:
+          success: "Tạo nhà xuất bản thành công."
+          failure: "Tạo nhà xuất bản thất bại."
+        update:
+          success: "Cập nhật nhà xuất bản thành công."
+          failure: "Cập nhật nhà xuất bản thất bại."
+        destroy:
+          success: "Xóa nhà xuất bản thành công."
+          failure: "Xóa nhà xuất bản thất bại."
+      
+      actions:
+        view: "Xem"
+        edit: "Chỉnh sửa"
+        delete: "Xóa"
+        search: "Tìm kiếm"
+        add: "Thêm nhà xuất bản"
+        back: "Quay lại"
+        save: "Lưu"
+        cancel: "Hủy"
+        update: "Cập nhật"
+
+      confirmations:
+        delete: "Bạn có chắc muốn xóa nhà xuất bản này không?"
+
+      placeholders:
+        search: "Tìm theo tên"
+        no_address: "Chưa có địa chỉ"
+        no_phone: "Chưa có số điện thoại"
+        no_email: "Chưa có email"
+        no_website: "Chưa có website"
+
+      attributes:
+        id: "Số thứ tự"
+        name: "Tên"
+        address: "Địa chỉ"
+        phone_number: "Số điện thoại"
+        email: "Email"
+        website: "Website"
+        created_at: "Ngày tạo"

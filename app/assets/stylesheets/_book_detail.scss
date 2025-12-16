@@ -1,0 +1,101 @@
+/* ===============================
+   Book Detail
+================================== */
+.book_detail {
+  .book_detail-image {
+    width: 300px;
+    height: 400px;
+  }
+}
+
+/* ===============================
+   Author Info
+================================== */
+.author-info-wrapper {
+  position: relative;
+
+  .author-border-line {
+    height: 4px;
+    background-color: #6fcff9;
+    margin: 16px 0;
+    border-radius: 3px;
+  }
+
+  .author-avatar {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+  }
+}
+
+/* ===============================
+   Rating & Reviews
+================================== */
+.review-avatar{
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+}
+
+.star-rating {
+  display: inline-block;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.star {
+  color: #ccc; /* mặc định xám */
+  transition: color 0.2s;
+}
+
+.star:hover,
+.star.hover,
+.star.selected {
+  color: gold; /* vàng khi hover hoặc chọn */
+}
+
+.rating_and_reviews_avatar {
+  width: 40px;
+  height: 40px;
+}
+
+.star-progress {
+  display: flex;
+  align-items: center;
+  height: 8px;
+  width: 100%;
+  background-color: #e9ecef;
+  border-radius: 4px;
+  overflow: hidden;
+
+  .star-progress-bar {
+    height: 100%;
+
+    &-5,
+    &-4 {
+      background-color: #28a745; // xanh lá
+    }
+
+    &-3,
+    &-2 {
+      background-color: #ffc107; // vàng
+    }
+
+    &-1 {
+      background-color: #dc3545; // đỏ
+    }
+  }
+}
+
+/* ===============================
+   Buttons
+================================== */
+.borrow_button {
+  background-color: rgba(255, 0, 0, 0.7);
+  color: white;
+  font-size: 25px;
+  padding: 10px 75px;
+  border: none;
+  border-radius: 4px;
+  margin: 25px;
+}

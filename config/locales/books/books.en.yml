@@ -1,0 +1,109 @@
+en:
+  books:
+    show:
+      back_to_home: "Back to Home"
+      unfavorite: "Unfavorite"
+      add_to_favorite: "Add to Favorite"
+      borrow: "Borrow"
+      rating: "Rating"
+      read_count: "Read Count"
+      available_quantity: "Available Quantity"
+      in_stock: "In Stock"
+      out_of_stock: "Out of Stock"
+      description: "Description"
+      no_description: "No description available."
+      year: "Publication Year"
+      category: "Category"
+      publisher: "Publisher"
+      about_author: "About the author"
+      no_of_books: "No. of Books"
+      no_of_followers: "No. of Followers"
+      no_bio: "No bio available for this author."
+      more_books_by_author: "More books by this author"
+      rating_and_reviews: "Rating & Reviews"
+      what_do_you_think: "What Do You Think?"
+      rate_this_book: "Rate This Book"
+      write_a_review: "Write a Review"
+      update_review: "Update review"
+      community_reviews: "Community Reviews"
+      stars: "stars"
+      readers_reviews: "Readers Reviews"
+      favorite_success: "Book has been added to your favorites."
+      favorite_failed: "Failed to add book to favorites."
+      unfavorite_success: "Book has been removed from your favorites."
+      unfavorite_failed: "Failed to remove book from favorites."
+      favorite_not_found: "Favorite not found."
+      book_not_found: "Book does not exist or has been deleted."
+
+    favorite_button:
+      unfavorite: "Unfavorite"
+      add_to_favorite: "Add to Favorite"
+
+    borrow_modal:
+      add_to_borrow_request: "Add to Borrow Request"
+      total_quantity: "Total Quantity"
+      available_quantity: "Available Quantity"
+      quantity: "Quantity to Borrow"
+      add_to_borrow_list: "Add to Borrow List"
+      
+    
+    review_section:
+      your_reviewed: "Your review"
+      delete_review: "Delete review"
+      are_you_sure: "Are you sure?"
+      update_review: "Update review"
+      write_review: "Write a review"
+    
+    review_form:
+      your_review: "Your review"
+      submit_review: "Submit review"
+      cancel: "Cancel"
+      update_review: "Update review"
+      missing_score: "Please select a star rating for your review!"
+    
+    destroy_review:
+      review_not_found: "Review not found."
+      deleted: "Review deleted successfully."
+      deleted_success: "Review deleted successfully."
+      delete_failed: "Failed to delete the review."
+
+    search:
+      search_results: "Search Results"
+      search_placeholder: "Search by title, author, category, or publisher..."
+      search: "Search"
+      results_for: "Results for \"%{query}\""
+      found_count:
+        one: "Found %{count} book"
+        other: "Found %{count} books"
+      author: "Author"
+      publisher: "Publisher"
+      categories: "Categories"
+      available: "Available"
+      view_details: "View Details"
+      borrow: "Borrow"
+      unavailable: "Unavailable"
+      no_results: "No books found"
+      try_different_search: "Try searching with different keywords"
+      showing_results: "Showing %{from}-%{to} of %{total} results"
+      search_by_title: "Search by Title"
+      search_by_category: "Search by Category"
+      search_by_author: "Search by Author"
+      search_by_publisher: "Search by Publisher"
+      search_all: "Search All"
+      in_title: "in titles"
+      in_category: "in categories"
+      in_author: "in authors"
+      in_publisher: "in publishers"
+      items_per_page:
+        one: "%{count} item per page"
+        other: "%{count} items per page"
+    flash:
+      added_to_borrow_cart: "Book has been added to your borrow cart."
+    add_to_favorite:
+      favorite_success: "Book has been added to your favorites."
+    remove_from_favorite:
+      unfavorite_success: "Book has been removed from your favorites."
+
+  topbar:
+    search_placeholder: "Search books..."
+    search: "Search"

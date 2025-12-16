@@ -1,0 +1,41 @@
+<h5><strong><%= t(".title") %></strong></h5>
+
+<% if borrow_requests.present? && borrow_requests.any? %>
+  <div class="table-responsive">
+    <table class="table table-bordered table-hover align-middle">
+      <thead class="table-light">
+        <tr>
+          <th><%= t(".id") %></th>
+          <th><%= t(".request_date") %></th>
+          <th><%= t(".action") %></th>
+          <th><%= t(".status") %></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% borrow_requests.each do |br| %>
+          <tr>
+            <td><%= br.id %></td>
+            <td><%= br.created_at.strftime(Settings.date_format.long) %></td>
+            <td>
+              <%= link_to t(".view"),
+                          admin_borrow_request_path(br, back_to: admin_user_path(@user)),
+                          class: "btn btn-sm btn-primary" %>
+            </td>
+            <td>
+              <% status_class = status_colors(br.status) %>
+              <span class="badge px-3 py-2 <%= status_class %>"><%= br.status.capitalize %></span>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="d-flex justify-content-center mt-3">
+    <%= raw pagy_bootstrap_nav(pagy) if pagy.present? %>
+  </div>
+<% else %>
+  <div class="alert alert-info text-center">
+    <%= t(".no_requests", default: "No borrow requests found.") %>
+  </div>
+<% end %>

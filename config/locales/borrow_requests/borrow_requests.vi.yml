@@ -1,0 +1,114 @@
+vi:
+  admin:
+    borrow_requests:
+      status_form:
+        save: "Lưu"
+        cancel: "Hủy"
+      status_display:
+        change: "Thay đổi"
+      status:
+        pending: "Đang chờ"
+        approved: "Đã duyệt"
+        rejected: "Bị từ chối"
+        returned: "Đã trả"
+        overdue: "Quá hạn"
+        expired: "Hết hạn"
+        canceled: "Đã hủy"
+        borrowed: "Đã mượn"
+      
+      index:
+        title: "Quản lý Yêu cầu Mượn sách"
+        id: "Số thứ tự"
+        username: "Tên người dùng"
+        request_date: "Ngày yêu cầu"
+        action: "Thao tác"
+        status: "Trạng thái"
+        no_requests: "Không có yêu cầu mượn nào"
+      search:
+        search_button: "Tìm kiếm"
+        search_username: "Tên người dùng"
+        search_username_placeholder: "Nhập tên người dùng"
+        from_date: "Từ ngày"
+        to_date: "Đến ngày"
+        status: "Trạng thái"
+        all: "Tất cả"
+        search: "Tìm kiếm"
+      borrow_request:
+        action_view: "Xem"
+
+      show:
+        title: "Quản lý chi tiết Yêu cầu Mượn sách"
+        back: "← Quay lại trang Danh sách yêu cầu"
+        request_info:
+          full_name: "Họ và tên"
+          email: "Email"
+          start_date: "Ngày bắt đầu"
+          end_date: "Ngày kết thúc"
+          request_date: "Ngày yêu cầu"
+        status_info:
+          actual_return_date_label: "Ngày trả thực tế"
+          actual_borrow_date_label: "Ngày mượn thực tế"
+          approved_date_label: "Ngày duyệt"
+          need_update_reason_label: "Lý do cần cập nhật"
+          admin_note_label: "Ghi chú của quản trị"
+          approved_by_label: "Được duyệt bởi"
+          rejected_by_label: "Bị từ chối bởi"
+          returned_by_label: "Được xác nhận trả bởi"
+          borrowed_by_label: "Được xác nhận mượn bởi"
+        book_borrowed:
+          title: "Sách đã mượn"
+          book_cover: "Ảnh bìa"
+          book_title: "Tiêu đề"
+          book_author: "Tác giả"
+          book_published_year: "Năm xuất bản"
+          borrowed_quantity: "Số lượng"
+          no_books: "Không có sách mượn"
+
+      status_change: "Thay đổi trạng thái"
+      change_status:
+        title: "Thay đổi trạng thái"
+        no_change: "Không có thay đổi trạng thái nào"
+        status_updated: "Thay đổi trạng thái thành công"
+        invalid_format: "Định dạng ngày không hợp lệ"
+        past_date: "Ngày trả thực tế không được là ngày trong quá khứ"
+        future_date: "Ngày trả thực tế không được là ngày trong tương lai"
+
+      actual_return_date:
+        not_available: "Trống"
+      actual_borrow_date:
+        not_available: "Trống"
+      approved_date:
+        not_available: "Trống"
+      admin_note:
+        no_note: "Trống"
+      need_update_reason:
+        no_reason: "N/A"
+      approved_by:
+        not_approved: "Chưa được xác nhận"
+      borrowed_by:
+        not_borrowed: "Chưa được mượn"
+      rejected_by:
+        not_rejected: "Chưa bị từ chối"
+      returned_by:
+        not_returned: "Chưa được xác nhận trả"
+
+      status_form_js:
+        status:
+          pending: "đang chờ"
+          approved: "đã duyệt"
+          rejected: "bị từ chối"
+          returned: "đã trả"
+          overdue: "quá hạn"
+          expired: "hết hạn"
+          canceled: "đã hủy"
+          borrowed: "đã mượn"
+        error:
+          admin_note_required: "Ghi chú của quản trị là bắt buộc khi từ chối yêu cầu mượn sách"
+          invalid_date: "Vui lòng chọn một ngày hợp lệ"
+          date_not_in_future: "Ngày trả thực tế không được là ngày trong tương lai"
+          no_change_status: "Trạng thái không có thay đổi"
+      flash:
+        not_access: "Bạn không có quyền truy cập vào trang này"
+      errors:
+        not_enough_stock: "Sách %{title} chỉ còn %{stock} cuốn trong kho. Vui lòng cập nhật số lượng sách mượn."
+        mailer_failed: "Không thể gửi email %{status} yêu cầu mượn: %{error}"

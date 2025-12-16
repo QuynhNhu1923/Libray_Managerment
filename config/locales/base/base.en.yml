@@ -1,0 +1,56 @@
+en:
+  language: Language
+  languages:
+    en: "English"
+    vi: "Vietnamese"
+  layouts:
+    application:
+      base_title: "Book Library"
+  errors:
+    template:
+      header:
+        one: "1 error prevented %{model} from being saved"
+        other: "%{count} errors prevented %{model} from being saved"
+  
+  auth:
+    please_login: "Please log in to access this page."
+
+  time:
+    formats:
+      default: "%d/%m/%Y %H:%M"
+
+  topbar:
+    guest: Guest
+    sign_in: Sign In
+    sign_up: Sign Up
+    profile: Profile
+    settings: Settings
+    log_out: Log out
+    
+  sidebar:
+    dashboard: Dashboard
+    users: Users
+    borrow_requests: Borrow Requests
+    books: Books
+    authors: Authors
+    categories: Categories
+    publishers: Publishers
+    home: Home
+    search: Search
+    favorite: Favorite
+    follow: Follow
+    borrow_list: Borrow List
+
+  login_modal:
+    title: "Login Required"
+    message: "You need to log in to perform this action."
+    login_button: "Login"
+    cancel_button: "Cancel"
+    close: "Close"
+  
+  pagy:
+    info:
+      single_page:
+        one: "Displaying <b>%{count}</b> item"
+        other: "Displaying <b>%{count}</b> items"
+      multiple_pages: "Displaying items <b>%{from}–%{to}</b> of <b>%{count}</b> total"

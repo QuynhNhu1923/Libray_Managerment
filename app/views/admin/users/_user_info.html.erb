@@ -1,0 +1,38 @@
+<div class="card mb-4">
+  <div class="card-body">
+    <div class="row">
+      <!-- Cột 1: Ảnh -->
+      <div class="col-12 col-md-4 text-center">
+        <% if @user.avatar.attached? %>
+          <%= image_tag @user.avatar, class: "img-fluid rounded-circle mb-2", size: Settings.user.avatar_size %>
+        <% else %>
+          <%= image_tag Settings.user.default_avatar, class: "img-thumbnail", size: Settings.user.avatar_size %>
+        <% end %>
+      </div>
+      <!-- Cột 2: Thông tin -->
+      <div class="col-12 col-md-8">
+        <p><strong><%= t(".ID") %>:</strong> <%= @user.id %></p>
+        <p><strong><%= t(".name") %>:</strong> <%= @user.name %></p>
+        <p><strong><%= t(".email") %>:</strong> <%= @user.email %></p>
+        <p><strong><%= t(".gender") %>:</strong> <%= @user.gender %></p>
+        <p><strong><%= t(".age") %>:</strong> <%= age_of(@user) %></p>
+        <p><strong><%= t(".date_of_birth") %>:</strong> <%= @user.date_of_birth.strftime(Settings.date_format.long) if @user.date_of_birth %></p>
+        <p><strong><%= t(".address") %>:</strong> <%= @user.address %></p>
+        <% if @user.phone_number.present? %>
+          <p><strong><%= t(".phone") %>:</strong> <%= @user.phone_number %></p>
+        <% end %>
+        <p><strong><%= t(".created_at") %>:</strong> <%= @user.created_at.strftime(Settings.date_format.long) %></p>
+        <p>
+          <strong><%= t(".status") %>:</strong>
+          <span id="<%= dom_id(@user, :status_badge) %>" 
+                class="badge <%= user_status_color(@user.status) %>">
+            <%= @user.status.capitalize %>
+          </span>
+        </p>
+        <div id="<%= dom_id(@user, :toggle_button) %>">
+          <%= render "toggle_status_form", user: @user %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

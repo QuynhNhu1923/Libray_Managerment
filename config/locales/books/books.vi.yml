@@ -1,0 +1,99 @@
+vi:
+  books:
+    show:
+      back_to_home: "Về trang chủ"
+      unfavorite: "Bỏ yêu thích"
+      add_to_favorite: "Thêm vào yêu thích"
+      borrow: "Mượn sách"
+      rating: "Đánh giá"
+      read_count: "Lượt đọc"
+      available_quantity: "Số lượng còn lại"
+      in_stock: "Còn hàng"
+      out_of_stock: "Hết hàng"
+      description: "Mô tả"
+      no_description: "Không có mô tả."
+      year: "Năm xuất bản"
+      category: "Thể loại"
+      publisher: "Nhà xuất bản"
+      about_author: "Về tác giả"
+      no_of_books: "Số sách"
+      no_of_followers: "Số người theo dõi"
+      no_bio: "Không có thông tin tiểu sử cho tác giả này."
+      more_books_by_author: "Các sách khác của tác giả"
+      rating_and_reviews: "Đánh giá & Nhận xét"
+      what_do_you_think: "Bạn nghĩ gì?"
+      rate_this_book: "Đánh giá cuốn sách này"
+      write_a_review: "Viết nhận xét"
+      update_review: "Cập nhật đánh giá"
+      community_reviews: "Nhận xét của cộng đồng"
+      stars: "sao"
+      readers_reviews: "Nhận xét của độc giả"
+      favorite_success: "Đã thêm sách vào mục yêu thích."
+      favorite_failed: "Thêm sách vào yêu thích thất bại."
+      unfavorite_success: "Đã bỏ sách khỏi mục yêu thích."
+      unfavorite_failed: "Bỏ sách khỏi yêu thích thất bại."
+      favorite_not_found: "Không tìm thấy sách trong mục yêu thích."
+      book_not_found: "Sách không tồn tại hoặc đã bị xóa."
+    
+    favorite_button:
+      unfavorite: "Bỏ yêu thích"
+      add_to_favorite: "Thêm vào yêu thích"
+
+    borrow_modal:
+      add_to_borrow_request: "Thêm vào yêu cầu mượn"
+      total_quantity: "Tổng số lượng"
+      available_quantity: "Số lượng hiện có"
+      quantity: "Số lượng muốn mượn"
+      add_to_borrow_list: "Thêm vào giỏ mượn"
+    
+    review_section:
+      your_reviewed: "Bạn đã đánh giá"
+      delete_review: "Xóa đánh giá"
+      are_you_sure: "Bạn có chắc chắn không?"
+      update_review: "Cập nhật đánh giá"
+      write_review: "Viết đánh giá"
+
+    review_form:
+      your_review: "Đánh giá của bạn"
+      submit_review: "Gửi đánh giá"
+      cancel: "Hủy"
+      update_review: "Cập nhật đánh giá"
+      missing_score: "Vui lòng chọn số sao cho đánh giá!"
+    
+    destroy_review:
+      review_not_found: "Không tìm thấy đánh giá."
+      deleted: "Xóa đánh giá thành công."
+      delete_failed: "Xóa đánh giá thất bại."
+
+    search:
+      search_results: "Kết Quả Tìm Kiếm"
+      search_placeholder: "Tìm theo tên sách, tác giả, thể loại hoặc nhà xuất bản..."
+      search: "Tìm kiếm"
+      results_for: "Kết quả cho \"%{query}\""
+      found_count:
+        other: "Tìm thấy %{count} cuốn sách"
+      author: "Tác giả"
+      publisher: "Nhà xuất bản"
+      categories: "Thể loại"
+      available: "Có sẵn"
+      view_details: "Xem chi tiết"
+      borrow: "Mượn"
+      unavailable: "Hết sách"
+      no_results: "Không tìm thấy sách nào"
+      try_different_search: "Thử tìm kiếm với từ khóa khác"
+      showing_results: "Hiển thị %{from}-%{to} trong %{total} kết quả"
+      search_by_title: "Tìm theo Tên Sách"
+      search_by_category: "Tìm theo Thể Loại"
+      search_by_author: "Tìm theo Tác Giả"
+      search_by_publisher: "Tìm theo Nhà Xuất Bản"
+      search_all: "Tìm Tất Cả"
+      in_title: "trong tên sách"
+      in_category: "trong thể loại"
+      in_author: "trong tác giả"
+      in_publisher: "trong nhà xuất bản"
+      items_per_page:
+        other: "%{count} mục mỗi trang"
+
+  topbar:
+    search_placeholder: "Tìm sách..."
+    search: "Tìm"

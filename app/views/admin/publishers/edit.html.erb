@@ -1,0 +1,7 @@
+<div class="card shadow-sm p-4">
+  <h3 class="mb-4 fw-bold"><%= t("admin.publishers.edit_title") %></h3>
+  <%= render "form",
+        publisher: @publisher,
+        submit_text: t("admin.publishers.actions.update"),
+        cancel_path: admin_publisher_path(@publisher) %>
+</div>
